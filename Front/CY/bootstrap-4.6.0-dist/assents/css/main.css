@@ -1,0 +1,81 @@
+.parent {
+  display: flex;
+  flex-direction: row;
+}
+.nav_bar {
+  background-color: gray;
+  width: 20vw;
+  height: 100vh;
+}
+
+.header {
+  background-color: rgb(91, 124, 231);
+  width: 80vw;
+  height: fit-content;
+}
+li {
+  list-style: none;
+}
+li:hover {
+  cursor: pointer;
+}
+/* li:active {
+  background-color: black;
+  color: white;
+} */
+.nav-ul {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+nav {
+  /* display: flex; */
+  /* flex-flow: column; */
+  /* align-items: center; */
+}
+#li_student {
+  padding-top: 120px;
+}
+#li_teacher {
+  padding-top: 120px;
+}
+#li_insert {
+  padding-top: 120px;
+}
+#btn_student {
+  font-size: 36px !important;
+  /*padding: 2px;*/
+  padding-bottom: 2px;
+  cursor: pointer;
+  background-color: #a3d1d4 !important;
+  border: none !important;
+}
+
+#btn_teacher {
+  font-size: 36px !important;
+  /*padding: 2px;*/
+  padding-bottom: 2px;
+  cursor: pointer;
+  background-color: #a3d1d4;
+  border: none !important;
+}
+
+#btn_insert {
+  font-size: 36px !important;
+  /*padding: 2px;*/
+  padding-bottom: 2px;
+  cursor: pointer;
+  background-color: #a3d1d4 !important;
+  border: none !important;
+}
+#btn_admin {
+  font-size: 36px !important;
+  /*padding: 2px;*/
+  padding-bottom: 2px;
+  cursor: pointer;
+  background-color: #a3d1d4 !important;
+  border: none !important;
+}
