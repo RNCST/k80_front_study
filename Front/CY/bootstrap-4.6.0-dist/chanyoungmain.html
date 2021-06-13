@@ -39,10 +39,26 @@
           <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+           <!--추가--><a href="#demo" class="nav-link text-white" aria-current="page" data-toggle="collapse">
+                
+            <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
-                  인터넷 강의 <span class="sr-only">(current)</span>
+                  인터넷 강의 
+                  <span class="sr-only">(current)</span>
                 </a>
+                  <!--추가-->
+                  <div id="demo" class="collapse show">
+                    <!-- 하위 메뉴 -->
+                    <ul class="collapse__menu">
+                      <a href="#" class="nav-link text-blue">신상정보조회</a>
+                      <a href="#" class="nav-link text-blue">신상정보수정</a>
+                      <a href="#" class="nav-link text-blue">종합정보조회</a>
+                      <a href="#" class="nav-link text-blue">본학기조회</a>
+                      <a href="#" class="nav-link text-blue">수강성적조회</a>
+                    </ul>
+                  </div>
+                </li>
+                  <!--추가 끝-->
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -148,7 +164,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
-                 강의삭제
+                  강의삭제
                 </a>
               </li>
             </ul>
