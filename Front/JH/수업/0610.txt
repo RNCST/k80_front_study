@@ -1,0 +1,25 @@
+hoisting이 아니라면 순서(위치) 중요 (절차니까)
+
+스크립트
+ready사용
+#유니크(자바 프로테티드,erd pk) 
+datagrid 이름object>얘안에서 구현(메소드,이벤트)
+실행문 : 실행문이 오는 자리 > 열거형 연산자(,) + 이벤트 처리 ②번
+attribute(속성)
+부적절한 신별자 >> DML >>SOL >> Toad를 봐라
+field > 컬럼명 : VO,컬럼,key와 변수 이름을 맞춰줘야함
+41
+data-options:표준아니고 easyui에서 준거, 구조 :  "이름 : '값', 이름2 : '값2' "
+
+DOM
+
+5교시
+ready()   xxx.sp4
+버튼 xxx.jsp > js로 해야함(tag는안대)
+조건식
+라인19~24 함수선언 <table 
+라인32-38 초기화관련>lifecycle>react
+id값앞에는 #붙임
+콤마, 없으면 화면 깨짐
+
+<bean id class <propery name="" ref="" <<html
