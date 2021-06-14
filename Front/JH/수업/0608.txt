@@ -1,0 +1,51 @@
+mdao master dao
+sdao serve dao
+
+1교시
+객체 종류3
+1내장 객체-사용자 객체도 포함
+String, Array, Date(Ajax)
+2브라우저 객체모델(BoM)
+3문서 객체(DOM)
+
+참조변수 = function()
+2교시
+html -head:meta tag(검색엔진,포털사이트 정부 수집 용) ,view port, 인코딩타입, 호이스팅이 일어나는곳
+body:화면 출력 포지션
+탬플릿 리터럴(내장된 표현식을 허용하는 문자열 리터럴)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+prototype을 사용하면 자바 static 느낌으로 
+5교시
+how? 쿼리String
+제약조건: get(한계가 있다)
+PostMan으로 단위테스트
+Parameter 열거형 , , , 
+상수, cast, prototype
+
+where?
+C 
+M : xxxDao와 xxxLogic으로 갈림
+Mybatis와 JDBC로 DB에 응답을 받아서 갖고와야함
+
+6교시
+xxx.sp4?bm_no=101&bm_title=게시판연습&bm_writer=이순신
+&bm_content=내용&bm_date=2021-06-08&bm_hit=0
+&bm_group=0(bm_no처럼 채번해야함)
+&bm_pos=0(원글이면 0, 1차 댓글이면 1, 1차 댓글에 대한 공격글이면 2가된다)
+&bm_step=0&bm_pw=123&bm_email=이메일연습
+
+/board/boardInsert.sp4?bm_no=101&bm_title=게시판연습&bm_writer=이순신
+&bm_content=내용&bm_date=2021-06-08&bm_hit=0
+&bm_group=0(bm_no처럼 채번해야함)
+&bm_pos=0(원글이면 0, 1차 댓글이면 1, 1차 댓글에 대한 공격글이면 2가된다)
+&bm_step=0&bm_pw=123&bm_email=이메일연습
+
+
+INSERT INTO board_master(bm_no,bm_title,bm_writer,bm_content,bm_date,bm_hit,
+bm_group,bm_pos,bm_step,bm_pw,bm_email)
+VALUES(#{bm_no},#{bm_title},#{bm_writer},#{bm_content},#{bm_date},
+#{bm_hit,#{bm_group},#{bm_pos},#{bm_step},#{bm_pw},#{bm_email})
+VALUES(SELECT 문.......)으로도 사용 가능
+
+board/boardInsert.sp4?bm_no=100&bm_title=게시판&bs_file=a.txt&bm_writer=김김&bm_email=test@hot.com&bm_content=곰&bm_pw=123
+	
