@@ -86,6 +86,11 @@ AndroidMainifest.xml
                 <category android:name="android.intent.category.LAUNCHER" />
 
 </intent-filter> ==>예시
+프로젝트는 여러 모듈을 묶어서 관리한다.
+xxx.jar => Beans 이런 리소스와 자바 클래스가
+컴파일하고 바이트 코드로 내린다.
+그래서 준비된 키(ssh)로 서명을 하게된다.
+배포용 파일인 apk가 만들어진다.
 
 # 21/06/11
 
