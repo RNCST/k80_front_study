@@ -1,5 +1,46 @@
 # Study
 
+# 21/06/15
+
+1교시
+
+C:\Users\user\AndroidStudioProjects
+-->안드로이드 프로젝트 관리 폴더
+
+plugins {
+id 'com.android.application'
+} --> 외부 컴포넌트 끌어올때..
+
+사람 -> 단말기 -> 액티비티(동적으로 처리 할때만 자바코드로 화면을 띄움)
+-->레이아웃을 받는 xml 호출 --> 다시 역순으로 보냄
+
+java -> 컴파일을 통해 바이트코드 -> APK(하나로 합쳐주는 친구) <- res(이미지, 동영상, font)
+
+21-> ARP(android runtime)
+DEX 해석 수행
+class -> Dex Compiler.dex
+
+컴포넌트는 앱에 구성단위이며 여러개를 조합함.
+
+안드로이드 시스템이 생명주기를 관리하게되면 컴포넌트라고 부르게 된다.
+자바에서 처럼 a,b클래스 의존관계를 처리할 수 없고 intent를 통해서 두개의 클래스가
+소통할 수 있 다.
+
+컴포넌트 결합은 actvity + a a+ service + a A+a+s+com 여러가지로 될 수 있다.
+
+2교시
+
+MainActivity + BeerExpent ==> 안드
+
+TextView brands = find
+findViewById(R.id.column);
+
+5교시
+제목 -> bm_title
+작성자 ->bm_writer
+내용 -> bm_content
+첨부파일은 post로 보낸다.
+
 # 21/06/14
 
 1교시
@@ -16,6 +57,15 @@ read.jsp
 2교시
 
 FrontController -->getBoardList -->getBoardADetail
+
+3교시
+코드를 실행하면 일어나는 일
+
+1. 사용자가 찾기 버튼을 클릭하면 액티비티의 메소드가 호출된다.
+   :메소드가 호출되면 스피너와 텍스트뷰의 레퍼런스를 생성하고 스피너에 현재 선택된 값을 가져온다.
+   2.findBeer는 BeerExpert 클래스의 getBrands 메소드를 호출하는데 이때 스피너에 선택된 맥주 종류를 인자로 전달한다.
+
+3.findBeer는 브랜드 목록의 형식을 정리한 다음 텍스트 뷰의 텍스트 속성을 설정하는데 사용함.
 
 6교시
 
