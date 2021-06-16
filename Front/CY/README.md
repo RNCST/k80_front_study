@@ -1,5 +1,94 @@
 # Study
 
+# 21/06/15
+
+1교시
+
+C:\Users\user\AndroidStudioProjects
+-->안드로이드 프로젝트 관리 폴더
+
+plugins {
+id 'com.android.application'
+} --> 외부 컴포넌트 끌어올때..
+
+사람 -> 단말기 -> 액티비티(동적으로 처리 할때만 자바코드로 화면을 띄움)
+-->레이아웃을 받는 xml 호출 --> 다시 역순으로 보냄
+
+java -> 컴파일을 통해 바이트코드 -> APK(하나로 합쳐주는 친구) <- res(이미지, 동영상, font)
+
+21-> ARP(android runtime)
+DEX 해석 수행
+class -> Dex Compiler.dex
+
+컴포넌트는 앱에 구성단위이며 여러개를 조합함.
+
+안드로이드 시스템이 생명주기를 관리하게되면 컴포넌트라고 부르게 된다.
+자바에서 처럼 a,b클래스 의존관계를 처리할 수 없고 intent를 통해서 두개의 클래스가
+소통할 수 있 다.
+
+컴포넌트 결합은 actvity + a a+ service + a A+a+s+com 여러가지로 될 수 있다.
+
+2교시
+
+MainActivity + BeerExpent ==> 안드
+
+TextView brands = find
+findViewById(R.id.column);
+
+5교시
+제목 -> bm_title
+작성자 ->bm_writer
+내용 -> bm_content
+첨부파일은 post로 보낸다.
+
+include는 잠깐 갔다돌아옴 다른페이지로 갔다가 다시 돌아가는 경우
+forward 이걸 그냥 보내버린다.
+
+<jsp:forward>
+현재 실행중인 JSP페이지의 제어 흐름을 특정한 다른 JSP로 넘기고자 할 때 사용하는 표준 액션태그입니다. 표준 액션태그이기 때문에 jsp: 라는 네임스페이스를 사용하며, 기본적으로 제공되는 기능입니다.
+
+다음처럼 사용자가 a.jsp페이지를 요청하고 서버에서 a.jsp를 실행하던 도중 <jsp:forward> 액션태그를 사용하여 b.jsp로 흐름을 이동시키면 b.jsp에서 흐름이 끝납니다.
+
+1. 브라우저에서 서버로 /a.jsp 페이지를 요청합니다.
+2. 서버에서는 /a.jsp페이지를 실행하던 중 forwad 액션태그를 통해 흐름을 /b.jsp 페이지로 넘깁니다.
+3. 흐름이 이동되는 시점에 /a.jsp페이지에서 사용하던 request 객체와 response 객체를 함께 전달합니다. (즉 두 가지 객체를 통해 요청 데이터 및 출력 버퍼를 공유할 수 있고, 브라우저 입장에서는 하나의 요청 범위 안에서 처리되는것으로 보입니다.)
+4. /b.jsp 페이지가 흐름을 넘겨받아 처리하고 최종 결과를 브라우저에 전달합니다.
+
+<jsp:include> 액션태그와의 차이점
+이전글의 include 액션태그와 거의 비슷하지만 한번 흐름이 넘어가면 제어가 다시 돌아오지 않는다는 차이점이 있습니다. 두번째 차이점은 include 액션태그는 a.jsp에서 출력하는 내용도 브라우저로 출력되는 반면 forward 액션태그는 a.jsp에서 출력되는 내용은 무시되고 b.jsp에서 출력하는 내용만 브라우저로 전달됩니다. 따라서 a.jsp에서는 출력 이외의 내용만 실행하고 b.jsp로 제어를 넘겨야 합니다.
+
+forward 액션태그는 다음과 같은 형식으로 사용합니다.
+<jsp:forward page="이동할 JSP 페이지" />  
+cs
+
+include 액션 태그에서 처럼 페이지를 그대로 지정하거나 표현식을 통해 지정할 수 있습니다.
+<jsp:forward page="forwarding.jsp" />  
+cs
+
+표현식을 사용한 경로 지정
+<%  
+ String jspUrl = "forwarding.jsp";
+%>
+<jsp:forward page="<%= jspUrl %>" />
+
+--
+<jsp :include>
+
+include액션태그와 include 디렉티브의 동작 방식에 차이가 있는 만큼 그 활용 방법에도 차이가 존재하는데, include 액션태그의 경우 여러 페이지에 걸쳐 중복되는 화면 구조를 하나의 파일로 만드는것에 목적이 있다면 include 디렉티브는 최종적으로 포함되는 JSP 페이지와 하나의 JSP 파일로서 동작하기 때문에 여러 JSP 페이지에서 사용하는 공통 변수들을 포함하는데 사용됩니다.
+
+<jsp:include> 액션태그 - 여러 페이지에 걸쳐 중복되는 화면을 하나의 JSP 페이지로 만들어 중복을 제거하는데 사용.
+<%@ include %> 디렉티브 - 여러 JSP 파일에 걸쳐 선언되어 사용되는 중복 변수나 중복 로직을 제거하는데 사용.
+
+동적으로 include하려면 inlcude 액션태그를 사용하자
+include 디렉티브는 JSP 페이지를 서블릿으로 변환하는 과정에서 코드를 포함하는 방식이기때문에 include될 대상 JSP 페이지를 명시해 주어야 하며, 최초에 호출시 서블릿으로 변환되어 이후에 계속 서비스됩니다.
+
+그러나 include 액션태그는 대상으로 지정된 JSP에게 흐름을 넘기는 방식이기 때문에 매번 서비스 할때마다 원하는 JSP 페이지를 호출할 수 있습니다. 다음과 같이 대상 페이지 경로를 표현식을 이용하여 넘길 수 있습니다. 매번 서비스 할때마다 조건에 따라서 대상 JSP 경로를 다르게 지정하여 사용할 수 있습니다.
+<%
+String targetPage = "/included.jsp";
+%>
+
+<jsp:include page="<%= targetPage %>" flush="false"/>
+
 # 21/06/14
 
 1교시
@@ -16,6 +105,15 @@ read.jsp
 2교시
 
 FrontController -->getBoardList -->getBoardADetail
+
+3교시
+코드를 실행하면 일어나는 일
+
+1. 사용자가 찾기 버튼을 클릭하면 액티비티의 메소드가 호출된다.
+   :메소드가 호출되면 스피너와 텍스트뷰의 레퍼런스를 생성하고 스피너에 현재 선택된 값을 가져온다.
+   2.findBeer는 BeerExpert 클래스의 getBrands 메소드를 호출하는데 이때 스피너에 선택된 맥주 종류를 인자로 전달한다.
+
+3.findBeer는 브랜드 목록의 형식을 정리한 다음 텍스트 뷰의 텍스트 속성을 설정하는데 사용함.
 
 6교시
 
@@ -86,6 +184,11 @@ AndroidMainifest.xml
                 <category android:name="android.intent.category.LAUNCHER" />
 
 </intent-filter> ==>예시
+프로젝트는 여러 모듈을 묶어서 관리한다.
+xxx.jar => Beans 이런 리소스와 자바 클래스가
+컴파일하고 바이트 코드로 내린다.
+그래서 준비된 키(ssh)로 서명을 하게된다.
+배포용 파일인 apk가 만들어진다.
 
 # 21/06/11
 
