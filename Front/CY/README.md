@@ -1,5 +1,130 @@
 # Study
 
+# 21/06/16
+
+API
+
+https://developer.android.com/guide/components/intents-filters?hl=ko#java
+
+https://developer.android.com/guide/topics/ui/layout/linear?hl=ko
+
+https://developer.android.com/guide/topics/ui/notifiers/toasts?hl=ko
+
+https://developer.android.com/guide/topics/manifest/manifest-intro?hl=ko
+
+https://developer.android.com/guide/components/fundamentals?hl=ko
+
+https://developer.android.com/guide/app-bundle?hl=ko
+
+https://developer.android.com/jetpack/androidx/migrate?hl=ko
+
+1교시
+
+dev_jsp(war) -> 안드(웹앱) --> 서블릿 ->ui -> html
+Activity(device) ->s/w (device)  
+mainfest 안쪽에 서비스나 액티비티가 있다. ->lifecycle(생명주기)를 관리해준다(컴포넌트)
+자바랑 다른 구조는 디바이스가 다르기 때문
+
+액티비티에 대한 라이프사이클..
+액티비티 안에는 오버라이드가 필요하다.
+
+앱 바로 밑에 manifest(액티비티 적재소)
+
+apk 안에 jar는 라이브러리 gradle(의존성주입)
+
+bulid gradle 외부 서비스 연결
+
+manifest
+java
+class -> dex(ART)
+
+res밑에는 외부 자원을 담는다.
+drwaable layout
+
+Object
+Dispatcher Servlet
+Httpservlet
+
+메니세프트 -> 권한 인증 키 액티비티 파이어베이스 키 유아이 테마
+자바 ->
+RES -> 이미지 동영상 폰트 그 안에 서브 경로가 있다.
+
+2교시
+
+Activity 안에는 Override가 필요함(콜백)
+onCreate()
+
+-> void onCreate(Bundle)
+
+java (듣기)
+(서블릿) -> java- > dao -> mybatis(id, pw를 가져간다.) -> oracle
+
+Select문 전달
+
+onCreate
+
+super/this
+onCreate ~유지 , 초기화
+setContentView를 통해 mav.setViewNames에 레이아웃을 넣는다.
+
+LinearLayout ll = new
+LinearLayout(); => 동적
+
+bulid.gradle(Project) <- 외부서비스 (파이어베이스)
+bulid.gradle(Module) <-컴파일버젼, JVM도 모듈안에 있다.>
+local.preperties 기기변경시 알아서 잘 변경해준다.
+
+퍼포먼스는 gradle.preperties
+
+ctrl + shift + r 프로젝트 + 해쉬 초기화 처음으로 가서 요청을 가져온다.
+
+3교시
+
+<Button
+android:onClick="메소드 이름" <-(View v)
+Intent i = new Intent(this,너)
+startActivity()
+
+> View ->
+> Button TextView
+> findViewById()
+> @id/\_\_ <bean id ="emp-controller">
+
+TextView
+tv = findViewById()
+tv.getText()
+
+5교시
+
+왜 옛날방식인가?
+트랜잭션 처리를 위해서
+bm_no는 최대값을 추출해서 1을 더하는 채번 방식이 옳은가? 옳지 않다!
+
+인덱스 활용법, 부분범위처리의 중요성- 속도향상의 원리
+댓글에 댓글 - 왜 계층형 게시판인가?
+
+6개월 직업교육중 한과목이 끝나면 3~5일 복습휴가가 필요하다. - 이재훈
+bm_no bm_group bm_pos bm_step bm_writer
+15 9 0 0
+댓글 - 복습할 시간이 필요하긴 하지만 1~2일이면 충분하다 - 김희태
+댓글 - 그런데 이럴 경우 교육기간이 늘어나서 반대합니다. - 김은영
+댓글 - 희태 너는 잘하니까 그렇지 나는 7일이 필요한 상태야 - 임동혁
+댓글 - 점심시간을 늘려주세요 - 강감찬
+
+쿼리문
+
+SELECT bm.bm_no, bm.bm_title, bm.bm_date, bs.bs_file, bm.bm_hit
+,bm.bm_group, bm.bm_pos, bm.bm_step, bm.bm_email, bm.bm_pw
+,bm.bm_writer,
+bm.bm_content
+FROM board_master2019 bm
+,board_sub2019 bs
+WHERE bm.bm_no = bs.bm_no(+)
+AND bm.bm_group=4
+ORDER BY BM.BM_GROUP desc, bm.bm_step asc
+
+edit board_master2019
+
 # 21/06/15
 
 1교시
