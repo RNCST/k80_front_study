@@ -1,5 +1,234 @@
 # Study
 
+
+# 21/06/17  프로젝트 공부 정리
+윈도우 쉬프트 에스 -> 캡쳐 ==>윈도우 기본기능 캡쳐
+윈도우 쉬프트 시 
+
+
+
+# 21/06/17
+
+시맨틱 태그
+
+https://velog.io/@ru_bryunak/HTML-%EA%B8%B0%EC%B4%88-2-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EB%9E%80
+
+시맨틱 태그란?
+시맨틱 태그란 브라우저, 검색엔진, 개발자 모두에게 콘텐츠의 의미를 명확히 설명하는 역할을 한다
+개발자가 의도한 요소의 의미가 명확히 드러나고 있다.이것은 코드의 가독성을 높이고 유지보수를 쉽게한다.
+
+form, table, img, 등이 있으며, HTML5에서 추가된 시맨틱 태그는 아래와 같다.
+header : 헤더를 의미
+nav : 네비게이션을 의미
+aside : 사이드에 위치하는 공간을 의미
+section : 본문의 여러 내용 (article)을 포함하는 공간을 의미
+article : 본문의 주 내용이 들어가는 공간을 의미
+footer : 푸터를 의미
+
+예를 들어, <div> 태그는 non-semantic 태그라고 할 수 있고,
+
+<table>, <article> 등의 태그는 semantic 태그라고 볼 수 있다.
+
+예를 들어 내가 로그인 페이지를 처음 만들 때
+div 태그를 사용하고 div태그 하나당 id를 분배하여
+css를 적용시켰지만 시맨틱 태그는 미리 정의된 태그를 사용하게 된다.
+
+<header>
+
+<footer>
+
+좀 더 태그의 의미가 명확하며 여러가지 태그들이 있다.
+
+--
+
+JSP - EL 표현식 EL(Expression Language)
+
+script 언어로 jsp의 기본문법을 보완하는 역할을 한다. 보통 jsp에 쓰이는 스크립트릿 등을 줄여 영역값을 일일이 받아 출력하는 수고로움을 덜 수 있으며 코드도 간결해진다.
+
+기본적으로 스크립트릿 <% %> 안이 아닌 HTML 영역에 ${ }을 사용한다
+
+JSTL(JSP Standard Tag Libray)
+
+- jsp 페이지에서 조거문 처리, 반복문 처리등을 html tag 형태로 작성할수 있게 도와준다.
+
+  - EL과의 차이점은 EL은 단순히 변수를 표현해 주는것이므로 다향한 형태로 jsp를 사용할수 없다.
+
+  - JSTL의 상용 목적은 스크릿을 대체 하기 위함이다.
+
+  - JSTL은 커스텀 Tag이다.
+
+- JSTL은 추가 적인 jar 파일이 필요하다
+
+  - http://tomcat.apache.org/download-taglibs.cgi 여기에서 다음의 파일 3개의 받은 후 WEB-INF/lib/ 에 복사하면된다
+
+1교시
+
+Closure : 현재 함수를 시각화해서 보여주면서 다른 함수와 연관되어 있는지 파악가능
+Global : 보통은 내가 사용하고 있는 로컬에 있는 값을 확인해 볼 수가 있다.
+Watch(조사식) : 우리가 좀 더 관심있는 지켜보고 싶은 것들을 확인가능함.
+CALL STACK : 이 함수가 호출되기 전까지 어떤 순서로 진행되었는지 확인가능함
+그리고 마지막에 중단점도 확인가능함.
+중단점은 각각 체크박스로 비활성화 또는 활성화 가능함
+BREAKPOINTS 옆에 동그라미 두 개를 누르면 한꺼번에 활성화 비활성화가 가능함.
+문제 제기
+코드를 수정하고 i가 0부터 다시 디버거를 돌리면서 기다리는 것이 싫다면???
+이때 BLOCK에서 i값 0을 9로 바꾸면 바로 for문이 끝나는 것을 확인할 수 있다.
+그리고 조사식에
+I == stop 엔터치면 디폴트값이 false가 출력되는데 여기서 step over를 누르면
+I와 stop이 같아지는 그래서 true로 값이 변경되는 간을 잡아낼 수 있다.
+브래이크포인트에 오른쪽 버튼을 누르면 두번째 편집 메뉴가 있는데 여기서
+원하는 조건을 만족할 때만 브래이크포인트가 동작하도록 조건을 걸어둘 수 있다.
+편집 창에 i === 3 일때 라는 조건을 건다.
+그리고 엔터치면 빨강 구슬 안에 = 문자열이 보인다.
+그밖에 Hit Count 몇번 카운트 되었을 때 멈출건지
+어떤 로그메시지 일때 멈출 건지 추가할 수 있다.
+코드를 수정했을 때 디버그를 멈추었다가 다시 시작해야 합니다.
+이런 점이 조금 불편할 수 있다
+우리가 코드를 수정할 때 마다 디버그를 새로 시작하면 편하다.
+그럴때 create a launch.json file 메뉴를 클릭한다.
+그리고 Node.js를 선택하면
+Launch.json파일이 열린다.
+{
+// IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+// 기존 특성에 대한 설명을 보려면 가리킵니다.
+// 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+"version": "0.2.0",
+"configurations": [
+{
+"type": "pwa-node",
+"request": "launch",
+"name": "Launch Program",
+"skipFiles": [
+"<node_internals>/**"
+],
+"program": "${workspaceFolder}\\app.js",
+"runtimeExecutable": "nodemon",
+"restart": true
+}
+]
+}
+로 고쳐주면 코드가 수정되었을 때 마다 새롭게 시작할 수 있다.
+저장하고 빠져 나오면 왼쪽 메뉴가 달라졌다.
+청록색 삼각형 Launch Program 을 누르면 된다..
+코드를 수정하고 저장만 하면 디버깅이 다시 시작된다.
+만일 이때 에러가 발생하면 nodemon을 글로벌로 설치해 준다.
+Npm i -g nodemon 으로 설치한다.
+
+1-2교시
+
+액티비티 생명주기란? 액티비티가 생성되고, 정지되고, 재생되고, 종료되는 등의 상태 변화와 그에 따른 콜백 메서드를 총칭한다.
+
+2교시
+
+app이 만들어지게 되면 app밑에 manifest가 생기고 manifest밑에는 AndroidMainfest.xml이 생기고 ( 권장, service등록, 테마(Theme),Actvity)를 등록한다.
+->java -- example(화면을 구성하는 기본 단위가 Activity) == JFrame == Window
+AppCompatActivity)부모<-- AndroidX
+onCreate => @Override (Bundel(상태))
+
+F.A ---> S.A 바로 못간다 이 함수를 부르려면 startActivity(intent)로 호출해라
+Intent i = new Intent (this, 목적지액티비티)
+Intent(context, 클래스이름) 또는 Intent.setClass(context, 클래스이름) 등) 일반적으로 본인이 만든 컴포넌트를 실행할 때 쓴다.
+
+값을 넘길때
+putExtra(이름,값) 를 사용한다.
+
+같은 어플내에서 값을 받으려면 Intent i = get Intent();
+
+FILO 구조이다.
+
+S.A -->활성화되면 foreground상태로 나온다.  
+F.A
+
+res ---> R.java 리소스를 따로 관리하며 int 단위로 관리
+이미지 관리 drawable 화면 관리 layout 자원관리 values
+
+colors.xml 색 관리
+stage.xml 문자관리
+arrays.xml 배열관리
+theme.xml 배경관리
+
+프로젝트 관리 시 카카오 API, 음성API , 지도 API, 인증API 사용하려면
+service 지원을 받아야하고 받으려면 --> \*gradle 방식 || 자바는 maven rep 방식 -->스프링에서 pom.xml에서 등록하면 DI,패키지,LIB방식으로
+지원 받는다.
+gradle방식은 project, moudle로 나뉜다.
+
+Project --> service 다른
+구글 API --> Intelly 임포트해여한다 윈도우에서 임포트는 classpath에서 올려야한다. 그급은 project에서 등록을 해야한다.
+
+Module 앱관련은 모듈에서 처리 이런 라이브러리 jar는 여기서 추가
+여긴 jvm이 1.8까지만 지원한다.
+또한 가장 중요한 App Id가 들어있다 외부 service를 이용하려면 여기서 등록을 해야하고 토큰값을 받아서 서비스에 대한 진행이 가능하다.
+local properties가 자동으로 등록해준다. sdk를 직접선택하라면 이 경로들을 알고 있어야한다.
+
+프로젝트 이름은 setting gradle에서 확인 gradle properties는 메모리 관리하는곳
+
+3교시
+
+안드로이드 --? onCreate() --> 액티비티(이 액티비티가 죽으면 안에 메소드도 죽는다.) --> 활동
+
+화면을 회전시키면 왜 액티비티를 다시 생성해야 하지?
+:onCreate는 보통 화면을 설정한느 코드를 포함합니다.
+onCreate메소드에서 수평, 수직모드와 관련된 특정 구성에 의존하고 있다.
+
+bundle은 액티비티 상태를 저장하고 있으므로 안드로이드 os를 통해서 액티비티 상태를 관리할 수 있는 유용한 api이다.
+
+---
+
+READ.JSP - 상세보기
+
+댓글쓰기 수정 삭제 목록
+
+INSERT , UPDATE , DELETE
+
+실제로 테이블이 있을 때 insert라는것은 밖에 있는 데이터가 하나씩 들어온다.
+우리가 서랍장에 서랍을 당기고 칸이 나뉘어져 있는게 나온다 칸하나하나 컬럼이다.
+컬럼이 여러개 모여잇어서 그 사람에 대한 정보를 제공하는 것이다.
+그 사람에 아이디 이름 나이 출신학교 그사람 연봉 입사일자 느낌이다.
+
+update 특정한 곳을 바꾸는것이다.
+
+insert, update, delete라는 것이 data를 관리하는 것인데
+데이터를 변질되면 안되니 오라클이라는것을 쓰는 이유가 데이터를 관리하는 구조체를
+table로부터 데이터를 삽입하거나 삭제하거나 수정할 때 dml이라는 문장을 쓴다.
+우리가 오늘 6월17일날 사용하려는 것은 수정인데 사람이 시스템을 이용하는 것이고
+시스템에 많은 회원이 있는데(당근마켓을 생각하라) 그런 데이터들을 이용하는것이고
+그래서 우리가 게시판을 짜는 것이다. 구매자를 찾고 매도자를 찾는것
+우리가 이제 ui를 html로하는게 아니라 easyui라는 자바스크립트로 만들어진 화면을 그려주는
+api가 있는 그런 소스 (왜냐면 우리가 easyui.js를 임포트했기에.. 그 안에 많은 api가 있다.)
+그런것들을 가져다가 쓸수 있게 easyui를 제공해주는데 jquery를 만든 회사에서 js를 제공해주는 것이다.
+jquery는 <input id ="mem_id를 쓸 떄"> doument.getElementById("mem_id")를 써여ㅑ하는데
+너무 코드가 반복이되어서 이 코드들 대신에 $("#mem_id")를 쓰자(#을 쓰는 이유는 유니크한 pk)
+이 easyui에서는 화면을 dialog -> jdialog(단독이라 부모가 죽으면 자식이 죽는다.)로 그릴수 있고 그 화면을 window로 그릴 수 있다
+window -> jframe(단독이라 부모가 죽으면 자식이 죽지 않는다)로 생각하고
+read.jsp(dialog)에서 댓글 쓰기를 처리한다.
+수정도 마찬가지로 기존에 있는 정보로 처리하니까 화면을 띄우기 위해서 dialog를 사용하는 방법이 있다
+대신에 xxx.jsp로 따로 만들어서 관리를 하자 그게 updateForm.jsp 이다.
+이제 목록을 보는게 getBoardList.sp4 --> 위치는 web-inf밑에 views밑에 board라고 만들었다. 이안에 jsp가 있다.
+url로 접근이 안된다. 톰캣구조가 web-inf밑에 폴더는 url로 접근불가능해서 보안이 좋다.
+보안상으로 안전하겠다, 우리가 이걸 개발할때 스프링이라는 방식을 쓰고 있으니까 스프링은
+이 구조를 제공한다. 단 조 건이 반드시 ModelAndView를 사용하게 된다 이걸 쓰면 이 구조를 사용할 수 있다.
+이쪽에다 배포를 하려면 xxx.jsp를 호출하려면 404가 뜬다. 뜨려면 sp4로 불러야 한다.
+server.xml에 그래서 등록한것이다. 하지만 updateform를 위한게 아니라 화면을 띄우기 위해선 부른 것이다.
+
+read.jsp에서 수정이라는 버튼울 눌렀을 때 이 jsp화면을 뛰우는게 web -> views -> board밑에 있다.
+read.jsp을 호출할 때 getBoardDetail.sp4 를 띄우지만
+getBoardDetail.sp4는 read.jsp를 띄우기 위해 사용한다.
+
+전체를 조회하는 경우는 getBoardList.jsp로 가고 한건 조회는 (상세조회) read.jsp
+이거에 위치가 web-inf -> view -> board에 있다. 브라우저에서 직접 호출이 불가능하다.
+ModelAndView를 통해서 인스턴스화 mav로 된거 mav.setViewName(**/**)
+스프링은 viewResolevr가 접두어.web-inf/views/board 접미어.jsp 를 붙혀준다
+
+web-inf -> views 밑에 폴더를 관리하면 mav.setViewName(**/**)에서 부를 수 있다. board라는 폴더 뿐만 아니라
+order, member...(업무명으로 관리)
+--
+public ModelAndView getBoardDetail(){
+ModelAndView mav = new ModelAndView(); //인스턴스화
+mav.setViewName("board/getBoardList"); //view이름을 정해준다.
+
+return mav;
+}
+
 # 21/06/16
 
 API
@@ -166,8 +395,6 @@ findViewById(R.id.column);
 내용 -> bm_content
 첨부파일은 post로 보낸다.
 
-include는 잠깐 갔다돌아옴 다른페이지로 갔다가 다시 돌아가는 경우
-forward 이걸 그냥 보내버린다.
 
 <jsp:forward>
 현재 실행중인 JSP페이지의 제어 흐름을 특정한 다른 JSP로 넘기고자 할 때 사용하는 표준 액션태그입니다. 표준 액션태그이기 때문에 jsp: 라는 네임스페이스를 사용하며, 기본적으로 제공되는 기능입니다.
