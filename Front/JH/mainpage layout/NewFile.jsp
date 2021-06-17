@@ -1,20 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <!doctype html>
-    <html lang="en">
-
-    <head>
-      <title>Pprk. 학사관리.</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="css/style.css">
-    </head>
-
-    <body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
       <!-- main frame wrapper 시작 -->
       <div class="wrapper d-flex align-items-stretch">
         <!-- 좌측 nav sidebar start -->
@@ -56,26 +50,15 @@
         <!-- Page Content start -->
         <div id="content" class="p-4 p-md-5">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
 
-              <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                <i class="fa fa-bars"></i>
-                <span class="sr-only">토글 버튼 위치(글씨출력 x)</span>
-              </button>
-
-              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-              </button>
               <!-- Page Content Header Start -->
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav ml-auto">
                   <!-- 현재보고있는 nav item은 calss active를 줄것. -->
-                  <div class=" <c:if test=" ${0 eq 0 }">active</c:if> ">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Page Content Header menu -1</a>
-                    </li>
+                  <div class ="<c:if test="${0 eq 0 }" >active</c:if>">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Page Content Header menu -1</a>
+                  </li>
                   </div>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Page Content Header menu -2</a>
@@ -101,35 +84,6 @@
                 </ul>
               </div>
               <!-- Page Content Header end -->
-            </div>
           </nav>
-          <h1 class="mb-4">메인 프레임의 속의 내용입니다.</h1>
-          <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
-          <p>이 안에서 섹션을 나누는 연습..
-            + data grid 나 다른걸 넣은다음 그안에 json으로 데이터를 oracle로 부터 가져와서 넣는 연습도 해야함.</p>
-          <p>
-            Page Content Header 부분에서 li class 에 active를 주는지 안주는지 등에 대한 조건문을
-            현재 보고있는 페이지 창과 EL JSTL을 이용해서 조건문을 만들것
-            <!-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-         -->
-          </p>
-          <p>
-            사이드 닫혀있을때 너비조정하는 방법에 대해서 생각 해볼것.
-            action으로 창마다 스타일을줘야??
-          </p>
-          <p>
-            메인 테마 색을 파프리카 로고에 맞춰서 어떤색으로 가져갈지??? 잘생각해볼것.
-            노랑#FFDE66, 회색?
-          </p>
-        </div>
-        <!-- Page Content end -->
-      </div>
-      <!-- main frame wrapper end -->
-
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/main.js"></script>
     </body>
-
-    </html>
+</html>
