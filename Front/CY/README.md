@@ -155,7 +155,72 @@ local properties가 자동으로 등록해준다. sdk를 직접선택하라면 �
 
 프로젝트 이름은 setting gradle에서 확인 gradle properties는 메모리 관리하는곳
 
-2-1 교시
+3교시
+
+안드로이드 --? onCreate() --> 액티비티(이 액티비티가 죽으면 안에 메소드도 죽는다.) --> 활동
+
+화면을 회전시키면 왜 액티비티를 다시 생성해야 하지?
+:onCreate는 보통 화면을 설정한느 코드를 포함합니다.
+onCreate메소드에서 수평, 수직모드와 관련된 특정 구성에 의존하고 있다.
+
+bundle은 액티비티 상태를 저장하고 있으므로 안드로이드 os를 통해서 액티비티 상태를 관리할 수 있는 유용한 api이다.
+
+---
+
+READ.JSP - 상세보기
+
+댓글쓰기 수정 삭제 목록
+
+INSERT , UPDATE , DELETE
+
+실제로 테이블이 있을 때 insert라는것은 밖에 있는 데이터가 하나씩 들어온다.
+우리가 서랍장에 서랍을 당기고 칸이 나뉘어져 있는게 나온다 칸하나하나 컬럼이다.
+컬럼이 여러개 모여잇어서 그 사람에 대한 정보를 제공하는 것이다.
+그 사람에 아이디 이름 나이 출신학교 그사람 연봉 입사일자 느낌이다.
+
+update 특정한 곳을 바꾸는것이다.
+
+insert, update, delete라는 것이 data를 관리하는 것인데
+데이터를 변질되면 안되니 오라클이라는것을 쓰는 이유가 데이터를 관리하는 구조체를
+table로부터 데이터를 삽입하거나 삭제하거나 수정할 때 dml이라는 문장을 쓴다.
+우리가 오늘 6월17일날 사용하려는 것은 수정인데 사람이 시스템을 이용하는 것이고
+시스템에 많은 회원이 있는데(당근마켓을 생각하라) 그런 데이터들을 이용하는것이고
+그래서 우리가 게시판을 짜는 것이다. 구매자를 찾고 매도자를 찾는것
+우리가 이제 ui를 html로하는게 아니라 easyui라는 자바스크립트로 만들어진 화면을 그려주는
+api가 있는 그런 소스 (왜냐면 우리가 easyui.js를 임포트했기에.. 그 안에 많은 api가 있다.)
+그런것들을 가져다가 쓸수 있게 easyui를 제공해주는데 jquery를 만든 회사에서 js를 제공해주는 것이다.
+jquery는 <input id ="mem_id를 쓸 떄"> doument.getElementById("mem_id")를 써여ㅑ하는데
+너무 코드가 반복이되어서 이 코드들 대신에 $("#mem_id")를 쓰자(#을 쓰는 이유는 유니크한 pk)
+이 easyui에서는 화면을 dialog -> jdialog(단독이라 부모가 죽으면 자식이 죽는다.)로 그릴수 있고 그 화면을 window로 그릴 수 있다
+window -> jframe(단독이라 부모가 죽으면 자식이 죽지 않는다)로 생각하고
+read.jsp(dialog)에서 댓글 쓰기를 처리한다.
+수정도 마찬가지로 기존에 있는 정보로 처리하니까 화면을 띄우기 위해서 dialog를 사용하는 방법이 있다
+대신에 xxx.jsp로 따로 만들어서 관리를 하자 그게 updateForm.jsp 이다.
+이제 목록을 보는게 getBoardList.sp4 --> 위치는 web-inf밑에 views밑에 board라고 만들었다. 이안에 jsp가 있다.
+url로 접근이 안된다. 톰캣구조가 web-inf밑에 폴더는 url로 접근불가능해서 보안이 좋다.
+보안상으로 안전하겠다, 우리가 이걸 개발할때 스프링이라는 방식을 쓰고 있으니까 스프링은
+이 구조를 제공한다. 단 조 건이 반드시 ModelAndView를 사용하게 된다 이걸 쓰면 이 구조를 사용할 수 있다.
+이쪽에다 배포를 하려면 xxx.jsp를 호출하려면 404가 뜬다. 뜨려면 sp4로 불러야 한다.
+server.xml에 그래서 등록한것이다. 하지만 updateform를 위한게 아니라 화면을 띄우기 위해선 부른 것이다.
+
+read.jsp에서 수정이라는 버튼울 눌렀을 때 이 jsp화면을 뛰우는게 web -> views -> board밑에 있다.
+read.jsp을 호출할 때 getBoardDetail.sp4 를 띄우지만
+getBoardDetail.sp4는 read.jsp를 띄우기 위해 사용한다.
+
+전체를 조회하는 경우는 getBoardList.jsp로 가고 한건 조회는 (상세조회) read.jsp
+이거에 위치가 web-inf -> view -> board에 있다. 브라우저에서 직접 호출이 불가능하다.
+ModelAndView를 통해서 인스턴스화 mav로 된거 mav.setViewName(**/**)
+스프링은 viewResolevr가 접두어.web-inf/views/board 접미어.jsp 를 붙혀준다
+
+web-inf -> views 밑에 폴더를 관리하면 mav.setViewName(**/**)에서 부를 수 있다. board라는 폴더 뿐만 아니라
+order, member...(업무명으로 관리)
+--
+public ModelAndView getBoardDetail(){
+ModelAndView mav = new ModelAndView(); //인스턴스화
+mav.setViewName("board/getBoardList"); //view이름을 정해준다.
+
+return mav;
+}
 
 # 21/06/16
 
@@ -323,8 +388,6 @@ findViewById(R.id.column);
 내용 -> bm_content
 첨부파일은 post로 보낸다.
 
-include는 잠깐 갔다돌아옴 다른페이지로 갔다가 다시 돌아가는 경우
-forward 이걸 그냥 보내버린다.
 
 <jsp:forward>
 현재 실행중인 JSP페이지의 제어 흐름을 특정한 다른 JSP로 넘기고자 할 때 사용하는 표준 액션태그입니다. 표준 액션태그이기 때문에 jsp: 라는 네임스페이스를 사용하며, 기본적으로 제공되는 기능입니다.
