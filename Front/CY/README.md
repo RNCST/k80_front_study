@@ -1,5 +1,162 @@
 # Study
 
+# 21/06/17
+
+시맨틱 태그
+
+https://velog.io/@ru_bryunak/HTML-%EA%B8%B0%EC%B4%88-2-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EB%9E%80
+
+시맨틱 태그란?
+시맨틱 태그란 브라우저, 검색엔진, 개발자 모두에게 콘텐츠의 의미를 명확히 설명하는 역할을 한다
+개발자가 의도한 요소의 의미가 명확히 드러나고 있다.이것은 코드의 가독성을 높이고 유지보수를 쉽게한다.
+
+form, table, img, 등이 있으며, HTML5에서 추가된 시맨틱 태그는 아래와 같다.
+header : 헤더를 의미
+nav : 네비게이션을 의미
+aside : 사이드에 위치하는 공간을 의미
+section : 본문의 여러 내용 (article)을 포함하는 공간을 의미
+article : 본문의 주 내용이 들어가는 공간을 의미
+footer : 푸터를 의미
+
+예를 들어, <div> 태그는 non-semantic 태그라고 할 수 있고,
+
+<table>, <article> 등의 태그는 semantic 태그라고 볼 수 있다.
+
+예를 들어 내가 로그인 페이지를 처음 만들 때
+div 태그를 사용하고 div태그 하나당 id를 분배하여
+css를 적용시켰지만 시맨틱 태그는 미리 정의된 태그를 사용하게 된다.
+
+<header>
+
+<footer>
+
+좀 더 태그의 의미가 명확하며 여러가지 태그들이 있다.
+
+--
+
+JSP - EL 표현식 EL(Expression Language)
+
+script 언어로 jsp의 기본문법을 보완하는 역할을 한다. 보통 jsp에 쓰이는 스크립트릿 등을 줄여 영역값을 일일이 받아 출력하는 수고로움을 덜 수 있으며 코드도 간결해진다.
+
+기본적으로 스크립트릿 <% %> 안이 아닌 HTML 영역에 ${ }을 사용한다
+
+JSTL(JSP Standard Tag Libray)
+
+- jsp 페이지에서 조거문 처리, 반복문 처리등을 html tag 형태로 작성할수 있게 도와준다.
+
+  - EL과의 차이점은 EL은 단순히 변수를 표현해 주는것이므로 다향한 형태로 jsp를 사용할수 없다.
+
+  - JSTL의 상용 목적은 스크릿을 대체 하기 위함이다.
+
+  - JSTL은 커스텀 Tag이다.
+
+- JSTL은 추가 적인 jar 파일이 필요하다
+
+  - http://tomcat.apache.org/download-taglibs.cgi 여기에서 다음의 파일 3개의 받은 후 WEB-INF/lib/ 에 복사하면된다
+
+1교시
+
+Closure : 현재 함수를 시각화해서 보여주면서 다른 함수와 연관되어 있는지 파악가능
+Global : 보통은 내가 사용하고 있는 로컬에 있는 값을 확인해 볼 수가 있다.
+Watch(조사식) : 우리가 좀 더 관심있는 지켜보고 싶은 것들을 확인가능함.
+CALL STACK : 이 함수가 호출되기 전까지 어떤 순서로 진행되었는지 확인가능함
+그리고 마지막에 중단점도 확인가능함.
+중단점은 각각 체크박스로 비활성화 또는 활성화 가능함
+BREAKPOINTS 옆에 동그라미 두 개를 누르면 한꺼번에 활성화 비활성화가 가능함.
+문제 제기
+코드를 수정하고 i가 0부터 다시 디버거를 돌리면서 기다리는 것이 싫다면???
+이때 BLOCK에서 i값 0을 9로 바꾸면 바로 for문이 끝나는 것을 확인할 수 있다.
+그리고 조사식에
+I == stop 엔터치면 디폴트값이 false가 출력되는데 여기서 step over를 누르면
+I와 stop이 같아지는 그래서 true로 값이 변경되는 간을 잡아낼 수 있다.
+브래이크포인트에 오른쪽 버튼을 누르면 두번째 편집 메뉴가 있는데 여기서
+원하는 조건을 만족할 때만 브래이크포인트가 동작하도록 조건을 걸어둘 수 있다.
+편집 창에 i === 3 일때 라는 조건을 건다.
+그리고 엔터치면 빨강 구슬 안에 = 문자열이 보인다.
+그밖에 Hit Count 몇번 카운트 되었을 때 멈출건지
+어떤 로그메시지 일때 멈출 건지 추가할 수 있다.
+코드를 수정했을 때 디버그를 멈추었다가 다시 시작해야 합니다.
+이런 점이 조금 불편할 수 있다
+우리가 코드를 수정할 때 마다 디버그를 새로 시작하면 편하다.
+그럴때 create a launch.json file 메뉴를 클릭한다.
+그리고 Node.js를 선택하면
+Launch.json파일이 열린다.
+{
+// IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+// 기존 특성에 대한 설명을 보려면 가리킵니다.
+// 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+"version": "0.2.0",
+"configurations": [
+{
+"type": "pwa-node",
+"request": "launch",
+"name": "Launch Program",
+"skipFiles": [
+"<node_internals>/**"
+],
+"program": "${workspaceFolder}\\app.js",
+"runtimeExecutable": "nodemon",
+"restart": true
+}
+]
+}
+로 고쳐주면 코드가 수정되었을 때 마다 새롭게 시작할 수 있다.
+저장하고 빠져 나오면 왼쪽 메뉴가 달라졌다.
+청록색 삼각형 Launch Program 을 누르면 된다..
+코드를 수정하고 저장만 하면 디버깅이 다시 시작된다.
+만일 이때 에러가 발생하면 nodemon을 글로벌로 설치해 준다.
+Npm i -g nodemon 으로 설치한다.
+
+1-2교시
+
+액티비티 생명주기란? 액티비티가 생성되고, 정지되고, 재생되고, 종료되는 등의 상태 변화와 그에 따른 콜백 메서드를 총칭한다.
+
+2교시
+
+app이 만들어지게 되면 app밑에 manifest가 생기고 manifest밑에는 AndroidMainfest.xml이 생기고 ( 권장, service등록, 테마(Theme),Actvity)를 등록한다.
+->java -- example(화면을 구성하는 기본 단위가 Activity) == JFrame == Window
+AppCompatActivity)부모<-- AndroidX
+onCreate => @Override (Bundel(상태))
+
+F.A ---> S.A 바로 못간다 이 함수를 부르려면 startActivity(intent)로 호출해라
+Intent i = new Intent (this, 목적지액티비티)
+Intent(context, 클래스이름) 또는 Intent.setClass(context, 클래스이름) 등) 일반적으로 본인이 만든 컴포넌트를 실행할 때 쓴다.
+
+값을 넘길때
+putExtra(이름,값) 를 사용한다.
+
+같은 어플내에서 값을 받으려면 Intent i = get Intent();
+
+FILO 구조이다.
+
+S.A -->활성화되면 foreground상태로 나온다.  
+F.A
+
+res ---> R.java 리소스를 따로 관리하며 int 단위로 관리
+이미지 관리 drawable 화면 관리 layout 자원관리 values
+
+colors.xml 색 관리
+stage.xml 문자관리
+arrays.xml 배열관리
+theme.xml 배경관리
+
+프로젝트 관리 시 카카오 API, 음성API , 지도 API, 인증API 사용하려면
+service 지원을 받아야하고 받으려면 --> \*gradle 방식 || 자바는 maven rep 방식 -->스프링에서 pom.xml에서 등록하면 DI,패키지,LIB방식으로
+지원 받는다.
+gradle방식은 project, moudle로 나뉜다.
+
+Project --> service 다른
+구글 API --> Intelly 임포트해여한다 윈도우에서 임포트는 classpath에서 올려야한다. 그급은 project에서 등록을 해야한다.
+
+Module 앱관련은 모듈에서 처리 이런 라이브러리 jar는 여기서 추가
+여긴 jvm이 1.8까지만 지원한다.
+또한 가장 중요한 App Id가 들어있다 외부 service를 이용하려면 여기서 등록을 해야하고 토큰값을 받아서 서비스에 대한 진행이 가능하다.
+local properties가 자동으로 등록해준다. sdk를 직접선택하라면 이 경로들을 알고 있어야한다.
+
+프로젝트 이름은 setting gradle에서 확인 gradle properties는 메모리 관리하는곳
+
+2-1 교시
+
 # 21/06/16
 
 API
