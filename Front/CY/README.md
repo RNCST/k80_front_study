@@ -1,11 +1,110 @@
 # Study
 
+# 21/06/18
 
-# 21/06/17  프로젝트 공부 정리
+-안드로이드-
+
+@Override
+protected void onStop(){
+super.onStop(); 상위 클래스에서 필요한 작업을 수행할 수 있도록 반드시 상위클래스에 onStop메소드를 호출해야한다. 그렇지 않으면 예외 발생
+running = false ; //정지
+}
+앱이 focus wach 실행을 재개
+
+wasRuuning 왜 써? => onStop메소드가 호출 되기전에 스탑워치가 실행중인지 알 수 있도록 상태를 관리해야 하지 않을까?
+
+-게시판 jsp-
+책 155페이지 include
+
+화면을 3단으로 구성하는 경우 top부분은 시스템에 대한 제목 로그인 화면.. 더그 아이콘이 있어서 클릭하면 왼쪽에서 메뉴바가 들어오고 아니면 github에서 sign할 수있는
+구조도 있을거고.. 이런 부분들이 모든 페이지에서 반복되게 필요할 경우 include를 쓰게 된다.
+
+페이지 INCLUDE방식 두가지
+
+1. 액션태그 방식 JSP:INCLUDE 둘몸(두개의 결과가 합쳐지는) -->한개 케이스를 처리하고 반영하려면 액션태그방식
+2. % include 한몸 -->공통으로 처리할일이면 이게 맞다
+   우리는 시점문제를 꼭 생각해야한다.
+
+include 는 forward가 아니다? include는 forward가 맞다!
+책 164 페이지 예제
+
+166페이지 7-8번에 3번라인 request.setCharacterEncoding("utf-8); 한글처리
+
+read.jsp를 부르려면 [web-inf]밑에 있기에 ModelAndView를 사용하여
+getBoardDetail.sp4 로 들어가야 한다. include나 forward사용할때 주의해라
+
+상세보기(read.jsp) 안쪽에 <div>를 박았다. div는 외적인 변화는 없고 반응형 웹에서는
+주인공 수준이다. 하지만 div는 최소한으로 사용하는게 좋다.
+read.jsp에서 상세보기로 넘어갈려면 id를 박아야한다. -> id="dlg-upd" class="easyi-dialog"> 외부에서 들어와야하는게 <-updateForm.jsp
+이런 양식은 앞으로 webcontent->board에 배포하자 -> 한건이 되었습니다(이런 간단한것들은 보안 필요도 없고 스피링에 굳이 연결할 이유가 없다.)
+
+지금 보는건 read.jsp인데 이동하는 페이지는 updateForm.jsp로 넘어가게 되니까
+read.jsp에서 선언만 되어있고 updateForm.jsp에 body(Tag)가 있을때 이벤트 처리가 필요하고 function call를 해야하는데 어디에 선언을 해야하는가?
+
+read.jsp에서 수정버튼을 누르면 dialog는 기본적으로(Model)속성을 가지고 있다. 그래서 활성화가 될텐데
+닫혀야만 활성화가 된다.
+
+\*\*강사님한테 질문할거 (id duplacTE? 아이디 디퓰리케이션이 뭔지)
+
+\*\*\*?
+1.read.jsp
+2.updateForm.jsp ?? 한글이 깨질때?
+3.updateForm.sp4
+
+# 21/06/18 프로젝트 공부 정리
+
+jsp 500 페이지
+
+NowServlet extends HttpServlet  
+"통신" => 약속(http) 규칙으로 명령을 한거죠 이 단어를 쓰면 통신을 할수 있어요 어떤 통신 ? stateless
+그래서 세션이나 쿠기가 필요하다는 것이다. 재훈이형이 장바구니에 우유를 넣을때 내가 그 우유를 못뺴는거
+그게 쿠기다. 장바구니 찜 기능 => 이것도 쿠키다 stateless 캐쉬 메모리
+자바가 있는 위치와 jsp가 있는 위치가 떨어져 있다
+src  
+응답(response)이 성공적으로 나가면 톰캣이 200번이 찍힌다.
+모든 서비스는 요청과 응답으로 이뤄져있다.
+servlet에는 메인 메소드가 없다 exe? 브라우저? 브라우저다 왜? html이니까...
+메인 메소드가 있어야 exe파일로 만들 수 있다.
+메인메소드가 있는건 웹서비스를 할 수 없다 로컬에서 밖에 못한다 후지다. ==> 업데이트 패치 받자고 매장가야함
+효율적으로 하려면 servlet => 집에서 패치를 받을 수 있다.
+통신을 하려면 http => 듣기가 가능
+네이버에서 떡볶이집 찾는거 => 그게 초이스 매운맛,안매운맛 반반 => 옵션 옵션을 전송해줘야한다.
+서버 => 정보수집 그 수집하는 메소드가 request.getParameter()
+냉장고 앞에 음식점 자석 => 쿠키 => 오랫동안 기억하고싶을 때 씀
+왜 세션을 안쓸까? 세션은 우리집 냉장고가 아니라 사무실에 있다. 그게 세션임 내 정본데 내가 보고 싶을 때 못봄
+그걸 보려면? 로그인..
+
+servlet이 있으므로 요청,응답,쿠키, 세션을 쓸 수 있고 페이지 이동을 할 수 있다.
+화면은 read.jsp src
+
+servlet을 요청했을 때 유지되고 있는거 처럼 보여졌을때 req.getAttribute() 주로 빈 객체나 다른 클래스를 받아올때 사용된다.
+servlet에 있는 값을 -> read.jsp에 있는정보를 꺼내올 수 있다.
+주소번지를 박는데 그게 =>List<Map>
+
+mav.addObject(key,value); = request.setAttribute() 비슷하다?
+
+Request Scope는 통신에서 변수를 유지하고자 할 때 사용한다 ==> mav.addObject는 마치 request.setAttribute()한것과 같다.
+
+a라는 페이지(a.jsp)  
+sonata myCar = new sonata();
+
+b라는 페이지 (b.jsp)
+에서도 소나타를 쓰고싶을 때 그걸 유지하는게 request.setAttribute("myCar", myCar);//request에 저장 리퀘스트가 유지되는 동안 꺼내 쓸 수 있다. 그때가 아니면 null이 찍힐거다. => 유지가 안된다 null이 찍히면
+mav.addObject("myCar", myCar); ==> 스프링에서만 사용가능
+res.sendRedirect("b.jsp")
+
+a.jsp --> b.jsp
+
+<jsp=forward page="/to/to.jsp"/>
+forward로 요청이 들어가면 to.jsp로 제어권이 내려간다.
+
+a.jsp에서 <jsp:forward>를 사용해서 이동한 b.jsp가 생성한 결과가 웹 브라우저 출력된다.
+웹 브라우저의 주소는 a.jsp 그대로이다 즉 리다이렉트처럼 b.jsp로 변경되지 않는다
+
+# 21/06/17 프로젝트 공부 정리
+
 윈도우 쉬프트 에스 -> 캡쳐 ==>윈도우 기본기능 캡쳐
-윈도우 쉬프트 시 
-
-
+윈도우 쉬프트 시
 
 # 21/06/17
 
@@ -155,7 +254,7 @@ gradle방식은 project, moudle로 나뉜다.
 Project --> service 다른
 구글 API --> Intelly 임포트해여한다 윈도우에서 임포트는 classpath에서 올려야한다. 그급은 project에서 등록을 해야한다.
 
-Module 앱관련은 모듈에서 처리 이런 라이브러리 jar는 여기서 추가
+앱관련은 모듈에서 처리 이런 라이브러리 jar는 여기서 추가
 여긴 jvm이 1.8까지만 지원한다.
 또한 가장 중요한 App Id가 들어있다 외부 service를 이용하려면 여기서 등록을 해야하고 토큰값을 받아서 서비스에 대한 진행이 가능하다.
 local properties가 자동으로 등록해준다. sdk를 직접선택하라면 이 경로들을 알고 있어야한다.
@@ -395,7 +494,6 @@ findViewById(R.id.column);
 내용 -> bm_content
 첨부파일은 post로 보낸다.
 
-
 <jsp:forward>
 현재 실행중인 JSP페이지의 제어 흐름을 특정한 다른 JSP로 넘기고자 할 때 사용하는 표준 액션태그입니다. 표준 액션태그이기 때문에 jsp: 라는 네임스페이스를 사용하며, 기본적으로 제공되는 기능입니다.
 
@@ -423,7 +521,6 @@ cs
 %>
 <jsp:forward page="<%= jspUrl %>" />
 
---
 <jsp :include>
 
 include액션태그와 include 디렉티브의 동작 방식에 차이가 있는 만큼 그 활용 방법에도 차이가 존재하는데, include 액션태그의 경우 여러 페이지에 걸쳐 중복되는 화면 구조를 하나의 파일로 만드는것에 목적이 있다면 include 디렉티브는 최종적으로 포함되는 JSP 페이지와 하나의 JSP 파일로서 동작하기 때문에 여러 JSP 페이지에서 사용하는 공통 변수들을 포함하는데 사용됩니다.
