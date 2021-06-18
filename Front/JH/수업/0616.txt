@@ -1,0 +1,17 @@
+자바 class > dex(속도가느려서 바꿈)
+res : 이미지,동영상,폰트 관리 (외부자원들 담는곳)
+layout ui를 xml로 그림
+
+sp4 컨트롤러를 타서 모델앤뷰
+모델앤뷰 스코프가 ??요청이 유지되고잇다
+closed 트루롸 변경 맨처음 나오느ㅏㄴ페이지
+컨트롤쉬프트알
+
+컨트롤쉬프트에프
+ NVL(bs.bs_file,'없음') bs_file
+
+이미지가td태그안에잇어야함
+첨부파일은 헤더에 못들어감 getx 그래서
+enctype기존리퀘스트로 못읾금 -cos.jar추가
+newDefalutFileRenamePolicy 같은이름파일이 올라오면 새로 이름 붙여줘서 중복안되게함
+
