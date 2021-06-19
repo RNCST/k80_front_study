@@ -13,23 +13,15 @@
 </head>
 
 <body>
-<!-- main frame wrapper 시작 -->
+  <!-- main frame wrapper 시작 -->
   <div class="wrapper d-flex align-items-stretch">
     <!-- 좌측 nav sidebar start -->
-    <!--시간표 시작 -->
-    <nav id="sidebar" class="active"> 
-      <h4>
-        <a href="index.html" class="logo">Pprk.</a></h4>
+    <nav id="sidebar" class="active">
+      <h4><a href="index.html" class="logo">Pprk.</a></h4>
       <ul class="list-unstyled components mb-5">
-      
-      
         <li class="active">
           <a href="#"><span class="fa fa-home"></span> 시간표 </a>
-          
         </li>
-
-
-
         <li>
           <a href="#"><span class="fa fa-user"></span> 종합정보조회</a>
         </li>
@@ -68,7 +60,7 @@
             <i class="fa fa-bars"></i>
             <span class="sr-only">토글 버튼 위치(글씨출력 x)</span>
           </button>
-          
+
           <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -107,29 +99,26 @@
           <!-- Page Content Header end -->
         </div>
       </nav>
-      <h1 class="mb-4">메인 프레임의 속의 내용입니다.</h1>
-      <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
-      <p>이 안에서 섹션을 나누는 연습.. 
-        + data grid 나 다른걸 넣은다음 그안에 json으로 데이터를 oracle로 부터 가져와서 넣는 연습도 해야함.</p>
-        <p>
-        Page Content Header 부분에서 li class 에 active를 주는지 안주는지 등에 대한 조건문을 
-        현재 보고있는 페이지 창과 EL JSTL을 이용해서 조건문을 만들것
-      </p>
-      <p>
-        사이드 닫혀있을때 너비조정하는 방법에 대해서 생각 해볼것.
-      </p>
-      <p>
-        메인 테마 색을 파프리카 로고에 맞춰서 어떤색으로 가져갈지??? 잘생각해볼것. 
-      </p>
+      <div class="screen1" style="width: 100%; height: 40%; background-color: bisque;">
+        <h1>메인 프레임의 속의 내용입니다.</h1>
+        <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
+      </div>
+      <div class="screen2" style="width: 50%; height: 40%; float: right; background-color: aquamarine;">
+        <h1 class="mb-4">메인 프레임의 속의 내용입니다.</h1>
+        <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
+      </div>
+      <div class="screen3" style="width : 50%; height: 40%; float: right; background-color: red; color: white;">
+        <h1 class="mb-4">메인 프레임의 속의 내용입니다.</h1>
+        <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
+      </div>
+      <!-- Page Content end -->
     </div>
-    <!-- Page Content end -->
-  </div>
-  <!-- main frame wrapper end -->
+    <!-- main frame wrapper end -->
 
-  <script src="../js/jquery.min.js"></script>
-  <script src="../js/popper.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/main.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

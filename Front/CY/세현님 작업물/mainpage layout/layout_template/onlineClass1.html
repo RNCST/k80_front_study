@@ -27,7 +27,7 @@
         <li class="active">
           <a href="#scroll1" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span> 시간표 </a>
-          <div id="scroll1" class="collapse show">
+          <div id="scroll1" class="collapse">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -41,7 +41,7 @@
         <li class="active">
           <a href="#scroll2" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span> 종합정보조회 </a>
-          <div id="scroll2" class="collapse show">
+          <div id="scroll2" class="collapse ">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -55,7 +55,7 @@
         <li class="active">
           <a href="#scroll3" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span> 강좌조회 </a>
-          <div id="scroll3" class="collapse show">
+          <div id="scroll3" class="collapse ">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -69,7 +69,7 @@
         <li class="active">
           <a href="#scroll4" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span> 등록금조회 </a>
-          <div id="scroll4" class="collapse show">
+          <div id="scroll4" class="collapse ">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -83,7 +83,7 @@
         <li class="active">
           <a href="#scroll5" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span> 예약시스템 </a>
-          <div id="scroll5" class="collapse show">
+          <div id="scroll5" class="collapse ">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -97,7 +97,7 @@
         <li class="active">
           <a href="#scroll6" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span> 인터넷 강의 </a>
-          <div id="scroll6" class="collapse show">
+          <div id="scroll6" class="collapse ">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -111,7 +111,7 @@
         <li class="active">
           <a href="#scroll7" aria-current="page" data-toggle="collapse">
             <span class="fa fa-home"></span>커뮤니티 </a>
-          <div id="scroll7" class="collapse show">
+          <div id="scroll7" class="collapse">
             <ul class="collapse__menu">
               <a href="#" class="nav-link text-blue">하위메뉴1</a>
               <a href="#" class="nav-link text-blue">하위메뉴2</a>
@@ -122,7 +122,8 @@
         </li>
         <!--scroll7끝-->
       </ul>
-
+     
+      
       <!-- 좌측 nav sidebar footer start -->
       <footer class="footer">
         <p>
@@ -178,25 +179,89 @@
           <!-- Page Content Header end -->
         </div>
       </nav>
-      <h1 class="mb-4">메인 프레임의 속의 내용입니다.</h1>
-      <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
-      <p>이 안에서 섹션을 나누는 연습..
-        + data grid 나 다른걸 넣은다음 그안에 json으로 데이터를 oracle로 부터 가져와서 넣는 연습도 해야함.</p>
-      <p>
-        Page Content Header 부분에서 li class 에 active를 주는지 안주는지 등에 대한 조건문을
-        현재 보고있는 페이지 창과 EL JSTL을 이용해서 조건문을 만들것
-      </p>
-      <p>
-        사이드 닫혀있을때 너비조정하는 방법에 대해서 생각 해볼것.
-      </p>
-      <p>
-        메인 테마 색을 파프리카 로고에 맞춰서 어떤색으로 가져갈지??? 잘생각해볼것.
-      </p>
-    </div>
-    <!-- Page Content end -->
-  </div>
-  <!-- main frame wrapper end -->
+      <!-- 밑부터 메인 프레임 속 내용-->
+      <!--06/19  인터넷 강의 - 강좌 조회 시작-->
+      <table class="table table-striped table" style="width: 100%; height: 40%;">
+         <!--테이블 글자 가운데 정렬 스타일 시작-->
+         <style>
+          td {
+            text-align: center;
+          }
+        </style>
+    <!--테이블 글자 가운데 정렬 스타일 끝-->
+        <thead>
+          <tr><!--
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            -->
+            <td colspan="4" >         
+              오세현 님의 E-Learning DashBoard</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  class="table table-bordered table" >
+            <td scope="row">동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+          </tr>
+          <tr  class="table table-bordered table">
+            <td scope="row">동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+          </tr>
+          <tr  class="table table-bordered table" >
+            <td scope="row">동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+            <td>동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세.
+              무궁화 삼천리 화려강산
+              대한 사람, 대한으로 길이 보전하세</td>
+          </tr>
+        </tbody>
+      </table>
+      <!--06/19  인터넷 강의 - 강좌 조회 끝-->
 
+
+
+  <!---------------------->
   <script src="../js/jquery.min.js"></script>
   <script src="../js/popper.js"></script>
   <script src="../js/bootstrap.min.js"></script>
