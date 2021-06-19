@@ -4,6 +4,10 @@
 
 - 게시판 트러블 슈팅-
 
+![오류1 페이지](https://user-images.githubusercontent.com/78460496/122627135-a1c58a80-d0e8-11eb-966c-ad441f12fed6.JPG)
+![오류1](https://user-images.githubusercontent.com/78460496/122627138-a427e480-d0e8-11eb-9939-ea565e7b06d5.JPG)
+
+
 getboardDelete 메소드 첫줄인 logger.info("delete 호출성공");이 서버로그에 뜨지 않아
 컨트롤러에서 문제가 생긴것을 알게된 후 메소드에 리턴타입에 문제가 있다는것을 알게되어
 리턴타입을 int -> void로 바꿔서 해결하였다.
