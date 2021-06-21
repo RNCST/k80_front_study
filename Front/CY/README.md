@@ -1,12 +1,86 @@
 # Study
 
+# 21/06/21
+
+1교시
+
+프래그먼트는 액티비티 안에 위치할 수 있는 사용자 인터페이스 하나의 "조각"이라 할 수 있다.
+즉 액티비티의 사용자 인터페이스를 여러 개 의 조각으로 나눌 수 있고 이 조각을 프래그먼트라고 한다..(프래그먼트는 서브액티비티)
+리니어 레이아웃 쓸 때 -> vertical horizontal를 정해줘야한다!
+
+테이블안에 테이블 쓸 수 있다.
+jframe jdialog 액티비티 프래그먼트 전부 부모가 죽으면 자식이 죽는다 ( 독립적으로 레이어(화면)는 가진다.)
+
+프래그먼트는 단독으로 실행 될 수 없다.
+프래그먼트는 독립적인 레이아웃을 가질 수 있다. => 화면을 그리는 xml을 갖는다.
+프래그먼트는 독립된 라이프 사이클을 갖는다.
+프래그먼트는 post 엑티비티가 죽으면 (프래그먼트를 감싸는 액티비티) 같이 따라서 죽는다.
+
+프래그먼트는 테블릿과 같은 넓은 화면을 가지는 모바일 화면을...
+우리 앱도 디바이스 크기에 따라 다르게 동작해야한다.
+다양하게 컨트롤하기 위해선 하나의 액티비티에 여러개의 프래그먼트를 넣어야 하는 경우가 생겼다.
+반대로 큰 화면을 가지는 태블릿안에는 보다 많은 정보를 사용자에게 보여주기 위해서 화면안에 프래그먼트들을
+여러개 배치할 수 있다. 여러개를 배치하려면 관리자가 있어야한다. 프래그먼트도 프래그먼트 매니저가 필요하고..
+그게 매니지먼트다. 그 매니지 먼트를 다룰 수 있는 api를 알고 있는 개발자!
+
+액티비티와 프래그먼트는 둘다 화면을 그리는xml , 라이플 사이클을 알고 있다.
+프래그먼트는 액티비티에 부분집합이다. ui 컴포넌트(액티비티)를 하나의 모듈(프래그먼트)에 넣어서!
+액티비티안에 프래그먼트만으로도 화면을 처리할 수 있다.
+액티비티가 보여주는 화면이 프레그먼트는 리니어레이아웃을 안쓰고 "프레그먼트 태그"를 사용해도된다.
+언제? 액티비티랑 프레그먼트가 동일시 할때 프래그먼트가 액티비티에 전부일 때
+액티비티는 여러개 프래그먼트로 이어져있고 깔대기(if, while)필요 컴포넌트 뷰 찾을 떄 findviewid가 있듯이..
+
+2교시
+
+프래그먼트는 단독으로 처리 불가능해서 런치할 수 있는 별도의 클래스가 필요하다.
+
+package com.example.ch7fragment;
+
+import android.os.Bundle;
+//안드로이드의 지원 라이브 러리의 Fragemnt를 사용함.
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class FragmentA extends Fragment {
+//프래그먼트 레이아웃이 필요할 때 안드로이드가 호출하는 메소드
+//아래 메소드는 선택사항이지만 레이아웃을 포함하는 Fragment에서는
+//이 메소드를 구현해야 함.
+//프래그먼트 사용자의 인터페이스를 가리키는 View 객체를 반환함.
+/\*
+@param1:LayoutInflater는 프래그먼트 레이아웃을 인플레이트하는데 사요암
+XML뷰를 자바 객체로 변환함.
+@param2: ViewGroup은 프래그먼트를 포함할 액티비티의 레이아웃을 가리킴
+@param3: Bundle은 프래그먼트 상태를 저장했다가 다시 살려낼 때 사용함.
+
+     */
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        // 프래그먼트가 어떤 레이아웃을 사용하는지 안드로이드에 알려줌
+        return inflater.inflate(R.layout.fragment_a, container, false);
+    }
+
+}
+
+3교시
+안드로이드 스튜디오에서 이클립스 단축키 적용하기
+File -> Settings -> Keymap 에서 이클립스 선택합니다.
+
+프래그먼트 매니저를 사용하는 방법에는 2가지가 있다.
+
+getFragmentManager()
+getSupportFragmentManger().findFragmentById() => R.id.fragment_id
+
 # 21/06/18
 
 - 게시판 트러블 슈팅-
 
 ![오류1 페이지](https://user-images.githubusercontent.com/78460496/122627135-a1c58a80-d0e8-11eb-966c-ad441f12fed6.JPG)
 ![오류1](https://user-images.githubusercontent.com/78460496/122627138-a427e480-d0e8-11eb-9939-ea565e7b06d5.JPG)
-
 
 getboardDelete 메소드 첫줄인 logger.info("delete 호출성공");이 서버로그에 뜨지 않아
 컨트롤러에서 문제가 생긴것을 알게된 후 메소드에 리턴타입에 문제가 있다는것을 알게되어
