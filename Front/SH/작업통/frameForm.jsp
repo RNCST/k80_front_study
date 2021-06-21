@@ -30,7 +30,7 @@
 		<!-- pageContent.jsp include -->
 		<div id="content" class="p-4 p-md-5">
 		
-			<jsp:include page="pageContent/pageContent.jsp"></jsp:include>
+			<jsp:include page="pageContent/1_0content.jsp"></jsp:include>
 			
 		</div>
 	</div>

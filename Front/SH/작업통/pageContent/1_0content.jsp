@@ -153,7 +153,7 @@
       </script>
 	<textarea name="" id="text"></textarea>
 </div>
-<script src="js/main.js"></script>
+<script src="js/toggleAction.js"></script> 
 <!-- 오른쪽 메인 프레임 끝-->
 <!-- </div> -->
 <!-- Page Content end -->
