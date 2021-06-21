@@ -1,6 +1,21 @@
 # Study
 
 # 21/06/21
+-트러블 슈팅 6월21일 -
+
+
+![21일자 spring트러블](https://user-images.githubusercontent.com/78460496/122759565-0cd3b480-d2d5-11eb-9a7d-9506264f68ea.JPG)
+
+MonitorAop클래스가 에러 였는데 bulid.gradle에서 수정한  dependencies(종속,의존관계)에 코드를 추가 해놓고 refresh gradle을 하지 않아 
+MonitorAop에서 import를 찾지 못하여서
+
+![트러블슈팅 해결](https://user-images.githubusercontent.com/78460496/122760047-a0a58080-d2d5-11eb-8904-b6f2f2023f98.png)
+
+해결했다.
+
+
+
+
 
 1교시
 
