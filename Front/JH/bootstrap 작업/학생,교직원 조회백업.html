@@ -106,60 +106,38 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-7">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              구분:대학생
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">구분:대학생</a>
-              <a class="dropdown-item" href="#">구분:교직원</a>
-            </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              대학:인문사회대학
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">대학:인문사회대학</a>
-              <a class="dropdown-item" href="#">대학:공과대학</a>
-              <a class="dropdown-item" href="#">대학:자연과학대학</a>
-            </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              학부:외국어 학부
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">학부:외국어 학부</a>
-              <a class="dropdown-item" href="#">학부:건축학부</a>
-              <a class="dropdown-item" href="#">대학:예체능 학부</a>
-            </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              학과:일어일문학
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">학과:일어일문학</a>
-              <a class="dropdown-item" href="#">학과:컴퓨터공학</a>
-              <a class="dropdown-item" href="#">학과:기계공학</a>
-            </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              구분:대학생
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">구분:대학생</a>
-              <a class="dropdown-item" href="#">구분:교직원</a>
-            </div>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              입학년도
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">2021년</a>
-              <a class="dropdown-item" href="#">2020년</a>
-              <a class="dropdown-item" href="#">2019년</a>
-              <a class="dropdown-item" href="#">2018년</a>
-              <a class="dropdown-item" href="#">2017년</a>
-            </div>
+            <select class="selectpicker">
+              <option>구분:교직원</option>
+              <option>구분:학생</option>
+            </select>
+            <select class="selectpicker">
+              <option>대학:인문사회대학</option>
+              <option>대학:공과대학</option>
+              <option>대학:자연과학대학</option>
+            </select>
+            <select class="selectpicker">
+              <option>학부:외국어학부</option>
+              <option>학부:건축학부</option>
+              <option>학부:예체능부</option>
+            </select>
+            <select class="selectpicker">
+              <option>학과:일어일문학</option>
+              <option>학과:컴퓨터공학</option>
+              <option>학과:기계공학</option>
+            </select>
+            <select class="selectpicker">
+              <option>재학</option>
+              <option>휴학</option>
+              <option>졸업</option>
+              <option>재직</option>
+              <option>퇴직</option>
+            </select>
+            <select class="selectpicker">
+              <option>입학년도:2020</option>
+              <option>입학년도:2019</option>
+              <option>입학년도:2018</option>
+              <option>입학년도:2017</option>
+            </select>
           </div>
           <div class="col-md-1">
             <input class="form-control mr-sm-2" type="text" placeholder="이름" aria-label="Search">
@@ -168,6 +146,7 @@
             <input class="form-control mr-sm-2" type="text" placeholder="학번" aria-label="Search">
           </div>
           <a href="#" button type="button" class="btn float-right btn-primary btn-lg">검색</a>
+
         </div>
       </div>
       <div class="screen2" style="width: 100%; height: 25%; background-color: cornflowerblue;">
