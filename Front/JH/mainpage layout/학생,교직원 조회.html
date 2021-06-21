@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Pprk. 학사관리.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- main frame wrapper 시작 -->
+  <div class="wrapper d-flex align-items-stretch">
+    <!-- 좌측 nav sidebar start -->
+    <nav id="sidebar" class="active">
+      <h4><a href="index.html" class="logo">Pprk.</a></h4>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#"><span class="fa fa-home"></span> 시간표 </a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-user"></span> 종합정보조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-sticky-note"></span> 강좌조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-cogs"></span> 등록금조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 예약시스템</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 인터넷 강의</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 커뮤니티</a>
+        </li>
+      </ul>
+      <!-- 좌측 nav sidebar footer start -->
+      <footer class="footer">
+        <p>
+          Copyright section</a>
+        </p>
+      </footer>
+      <!-- 좌측 nav sidebar footer end -->
+    </nav>
+    <!-- 좌측 nav sidebar end -->
+
+    <!-- Page Content start -->
+    <div id="content" class="p-4 p-md-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">토글 버튼 위치(글씨출력 x)</span>
+          </button>
+
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+          <!-- Page Content Header Start -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <!-- 현재보고있는 nav item은 calss active를 줄것. -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Page Content Header menu -1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -7</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -8</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Page Content Header end -->
+        </div>
+      </nav>
+      <div class="screen1" style="width: 100%; height: 5%; background-color: aquamarine;">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-7">
+            <select class="selectpicker">
+              <option>구분:교직원</option>
+              <option>구분:학생</option>
+            </select>
+            <select class="selectpicker">
+              <option>대학:인문사회대학</option>
+              <option>대학:공과대학</option>
+              <option>대학:자연과학대학</option>
+            </select>
+            <select class="selectpicker">
+              <option>학부:외국어학부</option>
+              <option>학부:건축학부</option>
+              <option>학부:예체능부</option>
+            </select>
+            <select class="selectpicker">
+              <option>학과:일어일문학</option>
+              <option>학과:컴퓨터공학</option>
+              <option>학과:기계공학</option>
+            </select>
+            <select class="selectpicker">
+              <option>재학</option>
+              <option>휴학</option>
+              <option>졸업</option>
+              <option>재직</option>
+              <option>퇴직</option>
+            </select>
+            <select class="selectpicker">
+              <option>입학년도:2020</option>
+              <option>입학년도:2019</option>
+              <option>입학년도:2018</option>
+              <option>입학년도:2017</option>
+            </select>
+          </div>
+          <div class="col-md-1">
+            <input class="form-control mr-sm-2" type="text" placeholder="이름" aria-label="Search">
+          </div>
+          <div class="col-md-1">
+            <input class="form-control mr-sm-2" type="text" placeholder="학번" aria-label="Search">
+          </div>
+          <a href="#" button type="button" class="btn float-right btn-primary btn-lg">검색</a>
+
+        </div>
+      </div>
+      <div class="screen2" style="width: 100%; height: 25%; background-color: cornflowerblue;">
+        <table class="table">
+          <thead class="text-center">
+            <tr>
+              <th scope="col">순번</th>
+              <th scope="col">학생/교직원</th>
+              <th scope="col">학번</th>
+              <th scope="col">이름</th>
+              <th scope="col">대학</th>
+              <th scope="col">학부</th>
+              <th scope="col">학과</th>
+              <th scope="col">구분</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr>
+              <td>1</td>
+              <td>학생</td>
+              <td>201512135</td>
+              <td>오세현</td>
+              <td>인문대학</td>
+              <td>외국어학부</td>
+              <td>일어일문학</td>
+              <td>재학</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>학생</td>
+              <td>201512135</td>
+              <td>오세현</td>
+              <td>인문대학</td>
+              <td>외국어학부</td>
+              <td>일어일문학</td>
+              <td>재학</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>학생</td>
+              <td>201512135</td>
+              <td>오세현</td>
+              <td>인문대학</td>
+              <td>외국어학부</td>
+              <td>일어일문학</td>
+              <td>재학</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="screen3" style="width: 100%; height: 60%; background-color: bisque;">
+        <div class="container-fluid">
+          <div class="row" style="text-align: center;">
+            <div class="col-md-3">
+              <img src="images/doge.png" style="width: 200px; height: 200px; margin-top: 5%;">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="한글 이름 : 박정호" aria-label="Username"
+                aria-describedby="basic-addon1" style="margin-top: 20%;">
+              <input type="text" class="form-control" placeholder="영문 이름 : Park Jeonh Ho" aria-label="Username"
+                aria-describedby="basic-addon1" style="margin-top: 10%;">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="학번 : 1232321321" aria-label="Class of"
+                aria-describedby="basic-addon1" style="margin-top: 20%;">
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+          <div class="row" style="margin-top: 2%; text-align: center;">
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="대학 : 인문 사회 대학" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="학부 : 외국어 학부" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="학과 : 일어국문학" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="구분 : 대학생/교수" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="row" style="margin-top: 2%; text-align: center;">
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="학적상태 : 재학" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="최종학적변동일자 : 2020-02-02" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="최종 이수 학년 및 학기" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="row" style="margin-top: 2%; text-align: center;">
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="부전공 : 해당없음" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="입학일자 : 2002-02-02" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page Content end -->
+  </div>
+  <!-- main frame wrapper end -->
+  <script>
+    $('#datepicker').datepicker({
+      uiLibrary: 'bootstrap4'
+    });
+  </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

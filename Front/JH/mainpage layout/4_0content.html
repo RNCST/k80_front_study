@@ -68,54 +68,31 @@
           </button>
           <!-- Page Content Header Start -->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav ml-auto">
-              <!-- 현재보고있는 nav item은 calss active를 줄것. -->
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Page Content Header menu -1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -3</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -4</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -5</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -6</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -7</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page Content Header menu -8</a>
-              </li>
-            </ul>
           </div>
           <!-- Page Content Header end -->
         </div>
       </nav>
-      <div class="screen1" style="width: 50%; height: 80%; float: left; background-color: bisque;">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="검색 키워드를 입력하세요!">
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button">찾기</button>
-          </span>
+      <div class="screen1" style="width: 100%; height: 5%; background-color: bisque;">
+        <div class="btn-group" style="width: 800px; margin-left: 20%;">
+          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            콤보박스(년도) : 2012
+          </button>
+          <div class="dropdown-menu" style="width: 800px;">
+            <a class="dropdown-item" href="#">콤보박스(년도) : 2013</a>
+            <a class="dropdown-item" href="#">콤보박스(년도) : 2014</a>
+            <a class="dropdown-item" href="#">콤보박스(년도) : 2015</a>
+          </div>
         </div>
+        <a href="#" button type="button" class="btn float-right btn-primary btn-lg">조회</a>
       </div>
-      <div class="screen2" style="width: 50%; height: 80%; float: right; background-color: aquamarine;">
-        <h1 class="mb-4">메인 프레임의 속의 내용입니다.</h1>
-        <p>이안에서 forward를 쓰든 include를 쓰든 다른걸 쓰든 계속 내용을 갈아끼우는 형식으로 만들어나갈것 입니다.</p>
+      <div class="screen2" style="width: 100%; height: 75%; background-color: aquamarine;">
+        <img src="images/money.jpg" style="height: 80%;">
       </div>
     </div>
     <!-- Page Content end -->
   </div>
   <!-- main frame wrapper end -->
-
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
