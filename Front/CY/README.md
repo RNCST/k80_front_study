@@ -2,6 +2,22 @@
 
 # 21/06/22
 
+트러블 슈팅
+
+![5교시 ajax 오류](https://user-images.githubusercontent.com/78460496/122875776-a9e32b80-d36f-11eb-91f4-57bf7e3f05f3.JPG)
+
+bootDashboard안에 톰캣이 있는걸 인지하지 못한채
+톰캣서버를 따로 기동 시켜 포트가 충돌하여 에러가 났었다.
+오류 후 톰캣서버 하나를 종료시켜 단독으로 bootDashboard
+를 사용하여 해결하였다.
+
+![6교시 ajax 오류](https://user-images.githubusercontent.com/78460496/122877958-26770980-d372-11eb-916d-2659e837249e.JPG)
+
+org.springframework.beans.factory.BeanCreationException이 떴다
+오류코드를 읽어보니 @RequestMapping이 문제인걸
+알게되어 구글링을 통해 RequestMapping 값이 중복되어서 에러가 발생한것을 알수있었다
+ajaxController 쪽 @RequestMapping url을 지워서 오류를 해결했다.
+
 1교시
 
 예제 ch7quiz
@@ -29,7 +45,7 @@ ft.commit();
 ```
   <script>
     function startMethod(){
-    	$.ajax({       
+    	$.ajax({
     		type : "get",
     		url: "requestGet.xml", <!--확장자는 xml이지만 태그는 html (jsp라 쓰고 html러 읽는다) --> <!--확장자에 현혹되지마라 (Mine타입을 고려해라)-->
 
@@ -60,6 +76,8 @@ ft.commit();
 부담이 준다 ajax를 jquery가 제공하는 api를 사용했을때 안심이된다.
 
 XMLHttpRequest()==> 비동기 통신을 지원해준다. <== e.responseText
+
+5교시
 
 # 21/06/21
 
