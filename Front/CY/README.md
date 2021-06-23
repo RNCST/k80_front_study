@@ -1,5 +1,30 @@
 # Study
 
+# 21/06/23
+
+1교시
+
+        AppComoatActivity(메인 상위 클래스)    <--mainActivity(java) - xml(ui)
+      Activity X (확장성API)
+
+ListFragment(Adapter)를 사용함 --> blank프레그먼트보다 편리하다 (스타일을 지원해준다)
+매핑(MVVM) 패턴
+DataSet -> DTM, JSON, XML
+
+DetailActivity WorkotDetail Fragment =>재사용 issue
+중요한건 라이프사이클을 볼 수 있는 애들
+인터페이스를 갈아 넣을 수 있는 것 그게 핵심
+
+include 액션태그방식 디렉티드 방식이 있다 우린 세현님이..
+
+
+
+5교시
+
+두번째 녹화 필기
+
+
+
 # 21/06/22
 
 객관식 , 주관식 넣어두고
@@ -508,7 +533,7 @@ return mav;
 
 # 21/06/16
 
-API
+안드로이드 API
 
 https://developer.android.com/guide/components/intents-filters?hl=ko#java
 
