@@ -2,6 +2,44 @@
 
 # 21/06/23
 
+https://user-images.githubusercontent.com/78460496/123098750-6de1c080-d46c-11eb-836c-fbc385c4b0b1.JPG
+
+```
+ implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.4.7'
+   implementation group: 'org.bgee.log4jdbc-log4j2', name:'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+   testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.31'
+```
+
+위 코드들을 전부 주석처리하여 뜬 에러이다. 주석처리를 풀고 해결하였다.
+
+https://user-images.githubusercontent.com/78460496/123098758-6f12ed80-d46c-11eb-9680-9a858fc3e6de.JPG
+
+오라클 프로시저를 넣지 않아서 생긴 에러다.
+
+```
+CREATE OR REPLACE PROCEDURE SCOTT.proc_login80(p_id IN varchar2
+                                      ,p_pw IN varchar2
+                                      , msg OUT varchar2)
+IS
+  r_status varchar2(100);
+BEGIN
+  SELECT NVL((SELECT mem_id FROM member80
+               WHERE mem_id=p_id),'-1') INTO r_status
+   FROM dual;
+  IF r_status=p_id THEN
+     SELECT NVL((SELECT mem_id
+                  FROM member80
+                 WHERE mem_id=p_id AND mem_pw=p_pw),'비밀번호가 틀립니다.') into msg
+      FROM dual;
+  ELSIF r_status='-1' THEN
+    msg:='아이디가 존재하지 않습니다.';
+  END IF;
+END;
+/
+```
+
+다음과 같은 프로시저 를 넣고 서버 재기동 후 해결 하였다.
+
 1교시
 
         AppComoatActivity(메인 상위 클래스)    <--mainActivity(java) - xml(ui)
@@ -17,13 +55,20 @@ DetailActivity WorkotDetail Fragment =>재사용 issue
 
 include 액션태그방식 디렉티드 방식이 있다 우린 세현님이..
 
-
-
 5교시
 
-두번째 녹화 필기
+java로 설정하고싶으면 반드시@을 써야한다 이걸 통해서 dependencies 인젝션(의존성 주입, 제어역행 등등을 누릴 수 있다.)
 
+그중에 @Bean은 주로 @Component라는 어노테이션 안쪽에서 사용이 가능하다 이 컴포넌트는 클래스 선언 앞에 올 수 있다.
+그래서 그 컴포넌트안에 메소드 안쪽에서 여러개 @Bean을 사용 가능하다. configration을 했을때도 메소드 위에 @Bean을 여러개 사용이 가능하다
+@Autowird 같은 경우 Controller에서 Logic으로 갈때, Logic에서 DAO 연결할 때도 사용했다. Mybatis넘어갈 때 Logic구간에 Dao구간이
+넓은 의미에선 모델계층이지만 똑같이 @Service을 사용하기보다는 별도의 @Repository라는 애를 사용하여 어떤 인터페이스로 작성해서
+(mybatis 레이어와 관련된) 작성해서 자동화 할 수 있다(mybatis api안에 있음) 그래서 일단 Dao계층은 @Repository를 통해서
+mybatis쪽과 연결이 되고 이 과정에서 sqlsessionTemplate가 mybatis쪽에서 spring 을 연동할때 객체 주입을 위해 따로 제공되는 클래스고
+그렇지 않으면(spring을 사용하지 않을 때) sqlSession을 사용했다.
 
+@Autowired는 BeanFactory와 역할을 같이한다.(spring core에서 제공해주는 프레임워크 핵심) 우리도 결국 DataSource에 대한 Bean 관리를 받아야한다
+==>Jmdi방식(원격에 있는 객체들을 참조하고 연계할 수 있는 명세서)
 
 # 21/06/22
 
