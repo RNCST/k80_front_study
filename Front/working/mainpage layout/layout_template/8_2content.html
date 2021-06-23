@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Pprk. 학사관리.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- main frame wrapper 시작 -->
+  <div class="wrapper d-flex align-items-stretch">
+    <!-- 좌측 nav sidebar start -->
+    <nav id="sidebar" class="active">
+      <h4><a href="index.html" class="logo">Pprk.</a></h4>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#"><span class="fa fa-home"></span> 시간표 </a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-user"></span> 종합정보조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-sticky-note"></span> 강좌조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-cogs"></span> 등록금조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 예약시스템</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 인터넷 강의</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 커뮤니티</a>
+        </li>
+      </ul>
+      <!-- 좌측 nav sidebar footer start -->
+      <footer class="footer">
+        <p>
+          Copyright section</a>
+        </p>
+      </footer>
+      <!-- 좌측 nav sidebar footer end -->
+    </nav>
+    <!-- 좌측 nav sidebar end -->
+
+    <!-- Page Content start -->
+    <div id="content" class="p-4 p-md-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">토글 버튼 위치(글씨출력 x)</span>
+          </button>
+
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+          <!-- Page Content Header Start -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <!-- 현재보고있는 nav item은 calss active를 줄것. -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Page Content Header menu -1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -7</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -8</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Page Content Header end -->
+        </div>
+      </nav>
+      <div class="screen1" style="width: 100%; height: 70%; background-color: bisque;">
+        <div class="container-fluid">
+          <div class="row" style="text-align: center;">
+            <div class="col-md-3">
+              <img src="images/doge.png" style="width: 200px; height: 200px; margin-top: 5%;">
+            </div>
+            <div class="col-md-3">
+              <div class="input-group mb-3" style="margin-top: 20%;">
+                <input type="text" class="form-control" placeholder="사진은 350*470px이하 3:4 사이즈로 업로드"
+                  aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">업로드</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="input-group mb-3" style="margin-top: 20%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">이름</span>
+                </div>
+                <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="input-group mb-3" style="margin-top: 20%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">학번</span>
+                </div>
+                <input type="text" class="form-control" placeholder="학번을 입력해주세요" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="dropdown" style="margin-top: 5%; margin-left: 5%;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                대학:인문사회대학
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">대학:인문사회대학</a>
+                <a class="dropdown-item" href="#">대학:공과대학</a>
+                <a class="dropdown-item" href="#">대학:자연과학대학</a>
+              </div>
+            </div>
+            <div class="dropdown" style="margin-top: 5%; margin-left: 5%;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                학부:외국어 학부
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">학부:외국어 학부</a>
+                <a class="dropdown-item" href="#">학부:건축학부</a>
+                <a class="dropdown-item" href="#">대학:예체능 학부</a>
+              </div>
+            </div>
+            <div class="dropdown" style="margin-top: 5%; margin-left: 5%;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                학과:일어일문학
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">학과:일어일문학</a>
+                <a class="dropdown-item" href="#">학과:컴퓨터공학</a>
+                <a class="dropdown-item" href="#">학과:기계공학</a>
+              </div>
+            </div>
+            <div class="dropdown" style="margin-top: 5%; margin-left: 5%;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                구분:대학생
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">구분:대학생</a>
+                <a class="dropdown-item" href="#">구분:교직원</a>
+              </div>
+            </div>
+            <div class="dropdown" style="margin-top: 5%; margin-left: 5%;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                구분:대학생
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">학적상태:재학</a>
+                <a class="dropdown-item" href="#">학적상태:휴학</a>
+                <a class="dropdown-item" href="#">학적상태:졸업</a>
+              </div>
+            </div>
+            <div style="margin-top: 5%; margin-left: 5%;">
+              <input id="datepicker" width="276" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen2" style="width: 100%; height: 10%; background-color: aquamarine;">
+        <div class="col text-center">
+          <a href="#" button type="button" class="btn btn-primary mr-5">추가</a>
+          <a href="#" button type="button" class="btn btn-primary">취소</a>
+        </div>
+      </div>
+    </div>
+    <!-- Page Content end -->
+  </div>
+  <!-- main frame wrapper end -->
+  <script>
+    $('#datepicker').datepicker({
+      uiLibrary: 'bootstrap4'
+    });
+  </script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+</html>
