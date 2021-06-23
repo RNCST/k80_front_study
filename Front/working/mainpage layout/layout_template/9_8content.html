@@ -10,6 +10,12 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/style.css">
+  <script type="text/javascript">
+    $(window).resize(function () { resizeYoutube(); });
+    $(function () { resizeYoutube(); });
+    function resizeYoutube() { $("iframe").each(function () { if (/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src"))) { $(this).css("width", "100%"); $(this).css("height", Math.ceil(parseInt($(this).css("width")) * 480 / 854) + "px"); } }); }
+  </script>
+
 </head>
 
 <body>
@@ -99,99 +105,38 @@
           <!-- Page Content Header end -->
         </div>
       </nav>
-<!---->
-      <div class="screen1" style="width: 100%; height: 25%; background-color: bisque;">
-        <h1></h1>
-        <p>
-          <div class="col text-center">
-            <a href="#" button type="button" class="btn btn-primary btn-lg">피드백 확인</a>
-            <a href="#" button type="button" class="btn btn-primary btn-lg">시험관리</a>
-          </div>
-          <table class="table table-bordered" style="text-align: center;">
-            <thead>
-              <!--버튼 선언 시작 -->
-                  <tr>
-                    <th scope="col" style="width: 50%; text-align:right;">
-                      <div class="input-group-prepend" style="float:right" >
-                        <span class="input-group-text" id="basic-addon3" style="height: auto;" >강의자료</span>
-                      </div>
-                  </th>   
-              <!----> 
-                    <th scope="col" style="float: left; " >
-                  <a href=# style="font-weight: bolder;"  >일본어문화 강좌 강의자료 zip</a>
-                    </th>
-                
-                  </tr></thead></table>
-                  <table class="table table-striped table" style="width: 100%; height: 40%;">
-                    <!--테이블 글자 가운데 정렬 스타일 시작-->
-                  
-              <!--테이블 글자 가운데 정렬 스타일 끝-->
-                    <thead>
-                      <tr>
-                        <td colspan="4" style= "text-align: center; font-size: 32px; font-weight: bold;"   >         
-                          수강 목록 조회</td>
-                      </tr>
-                    </thead></table>          
-        </p>
+      <div class="screen1" style="width: 100%; height: 10%; background-color: bisque;">
+        <div style=" text-align: center;">
+          <h1>강좌 제목 | [강의 제목] | [비고]</h1>
+        </div>
       </div>
-      <!--두번째 화면 시작-->
-      <div class="screen2" style="width: 100%; height:55%; background-color: aquamarine;">
-        <h1 class="mb-4"></h1>
-        <p>
-          <table class="table table-bordered" style="text-align: center;  width: 100%; "  >
-            <thead >
-              <tr>
-                <th scope="col" style="width: 33%;">순번</th>
-                <th scope="col">강의제목</th>
-                <th scope="col">비고</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr>    
-              <tr>
-                <th scope="row">3</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr>  
-              <tr>
-                <th scope="row">7</th>
-                <td>오리엔테이션</td>
-                <td>비고사항 없음</td>
-              </tr> 
-       
-                </tbody></table>
-        </p>
+      <div class="screen2" style="width: 100%; height: 70%; background-color: aquamarine;">
+        <div class="col text-center">
+          <iframe width="854" height="480" src="https://www.youtube.com/embed/a4IosLAbLXY" frameborder="0"
+            allowfullscreen=""></iframe>
+        </div>
+        <div class="col text-center">
+          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">업로드</a>
+        </div>
+      </div>
+      <div class="screen1" style="width: 100%; height: 10%; background-color: gold;">
+        <div class="col text-center">
+          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">강의 등록</a>
+        </div>
       </div>
     </div>
-  </div>
-  <!---->
     <!-- Page Content end -->
   </div>
   <!-- main frame wrapper end -->
+  <!-- 파일첨부 시작 -->
+  <script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function () {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+  </script>
+  <!-- 파일첨부 끝 -->
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/popper.js"></script>

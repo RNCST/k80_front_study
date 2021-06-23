@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Pprk. 학사관리.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/materia/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/calendar.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+  <script src="js/calendar.js"></script>
+</head>
+
+<body id="dev_jh">
+  <!-- main frame wrapper 시작 -->
+  <div class="wrapper d-flex align-items-stretch">
+    <!-- 좌측 nav sidebar start -->
+    <nav id="sidebar" class="active">
+      <h4><a href="index.html" class="logo">Pprk.</a></h4>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="#"><span class="fa fa-home"></span> 시간표 </a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-user"></span> 종합정보조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-sticky-note"></span> 강좌조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-cogs"></span> 등록금조회</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 예약시스템</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 인터넷 강의</a>
+        </li>
+        <li>
+          <a href="#"><span class="fa fa-paper-plane"></span> 커뮤니티</a>
+        </li>
+      </ul>
+      <!-- 좌측 nav sidebar footer start -->
+      <footer class="footer">
+        <p>
+          Copyright section</a>
+        </p>
+      </footer>
+      <!-- 좌측 nav sidebar footer end -->
+    </nav>
+    <!-- 좌측 nav sidebar end -->
+
+    <!-- Page Content start -->
+    <div id="content" class="p-4 p-md-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="dev_jh calendar">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">토글 버튼 위치(글씨출력 x)</span>
+          </button>
+
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+          <!-- Page Content Header Start -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          </div>
+          <!-- Page Content Header end -->
+        </div>
+      </nav>
+      <div class="screen1" style="width: 50%; height: 55%; float: left; background-color: bisque;">
+        <!-- 달력시작 -->
+        <div id="calendar"></div>
+        <!-- 달력 끝 -->
+      </div>
+      <div class="screen2" style="width: 50%; height: 55%; float: right; background-color: yellowgreen; ">
+        <div class="roomA" style="width: 100%; height: 33%; float: right; background-color: plum; ">
+          <button type="button" class="btn btn-danger mr-5"
+            style="height: 75%; width: 100px; margin-top: 2%; margin-left: 2%;">
+            <h1>A관</h1>
+          </button>
+          <div class="btn-group" role="group" style="height: 75%; margin-top: 2%; margin-left: 2%;">
+            <button type="button" class="btn btn-primary mr-4">1회의실</button>
+            <button type="button" class="btn btn-primary mr-4">2회의실</button>
+            <button type="button" class="btn btn-primary mr-4">3회의실</button>
+            <button type="button" class="btn btn-primary mr-4">4회의실</button>
+            <button type="button" class="btn btn-primary mr-4">5회의실</button>
+          </div>
+        </div>
+        <div class="roomB" style="width: 100%; height: 33%; float: right; background-color: lawngreen;">
+          <button type="button" class="btn btn-danger mr-5"
+            style="height: 75%; width: 100px; margin-top: 2%; margin-left: 2%;">
+            <h1>B관</h1>
+          </button>
+          <div class="btn-group" role="group" style="height: 75%; margin-top: 2%; margin-left: 2%;">
+            <button type="button" class="btn btn-primary mr-4">1회의실</button>
+            <button type="button" class="btn btn-primary mr-4">2회의실</button>
+            <button type="button" class="btn btn-primary mr-4">3회의실</button>
+            <button type="button" class="btn btn-primary mr-4">4회의실</button>
+            <button type="button" class="btn btn-primary mr-4">5회의실</button>
+          </div>
+        </div>
+        <div class="roomC" style="width: 100%; height: 33%; float: right; background-color: skyblue;">
+          <button type="button" class="btn btn-danger mr-5"
+            style="height: 75%; width: 100px; margin-top: 2%; margin-left: 2%;">
+            <h1>C관</h1>
+          </button>
+          <div class="btn-group" role="group" style="height: 75%; margin-top: 2%; margin-left: 2%;">
+            <button type="button" class="btn btn-primary mr-4">1회의실</button>
+            <button type="button" class="btn btn-primary mr-4">2회의실</button>
+            <button type="button" class="btn btn-primary mr-4">3회의실</button>
+            <button type="button" class="btn btn-primary mr-4">4회의실</button>
+            <button type="button" class="btn btn-primary mr-4">5회의실</button>
+          </div>
+        </div>
+      </div>
+      <div class="screen3" style="width: 60%; height: 30%; float: left; background-color: aquamarine;">
+        <h4>예약 시간 선택</h4>
+        <div class="btn-group" role="group" aria-label="Basic example" style="height: 50%;">
+          <button type="button" class="btn btn-primary mr-1">09:00</button>
+          <button type="button" class="btn btn-primary mr-1">10:00</button>
+          <button type="button" class="btn btn-primary mr-1">11:00</button>
+          <button type="button" class="btn btn-primary mr-1">12:00</button>
+          <button type="button" class="btn btn-primary mr-1">13:00</button>
+          <button type="button" class="btn btn-primary mr-1">14:00</button>
+          <button type="button" class="btn btn-primary mr-1">15:00</button>
+          <button type="button" class="btn btn-primary mr-1">16:00</button>
+          <button type="button" class="btn btn-primary mr-1">17:00</button>
+          <button type="button" class="btn btn-primary mr-1">18:00</button>
+          <button type="button" class="btn btn-primary mr-1">19:00</button>
+          <button type="button" class="btn btn-primary mr-1">20:00</button>
+          <button type="button" class="btn btn-primary mr-1">21:00</button>
+        </div>
+        <div style="height: 10%;"></div>
+        <div style="height: 20%; padding-right: 50%;">
+          <a href="#" button type="button" class="btn float-right btn-primary btn-lg">예약</a>
+        </div>
+      </div>
+      <div class="screen4" style="width : 40%; height: 30%; float: right; background-color: pink;">
+        <div style="height: 20%; text-align: center;">
+          <h2>박정호의 예약현황</h2>
+        </div>
+        <div style="height: 50%; background-color:ivory; text-align: center;">
+          <p>2021.06.06 / C관/ 3회의실 / 20:00</p>
+        </div>
+      </div>
+    </div>
+    <!-- Page Content end -->
+  </div>
+  <!-- main frame wrapper end -->
+
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+<!-- 달력시작 -->
+<script>
+  $(document).ready(function (e) {
+    calendar = new CalendarYvv("#calendar", moment().format("Y-M-D"), "Monday");
+    calendar.funcPer = function (ev) {
+      console.log(ev)
+    };
+    calendar.createCalendar();
+  });
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- 달력 끝 -->
+
+</html>
