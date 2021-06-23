@@ -10,11 +10,6 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript">
-    $(window).resize(function () { resizeYoutube(); });
-    $(function () { resizeYoutube(); });
-    function resizeYoutube() { $("iframe").each(function () { if (/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src"))) { $(this).css("width", "100%"); $(this).css("height", Math.ceil(parseInt($(this).css("width")) * 480 / 854) + "px"); } }); }
-  </script>
 </head>
 
 <body>
@@ -106,39 +101,114 @@
       </nav>
       <div class="screen1" style="width: 100%; height: 10%; background-color: bisque;">
         <div class="col text-center">
-          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">피드백보내기</a>
+          <h1>받은 피드백 리스트</h1>
         </div>
       </div>
-      <div class="screen2" style="width: 100%; height: 70%; background-color: aquamarine;">
-        <div class="col text-center">
-          <h1>일본어 문화</h1>
-          <iframe width="854" height="480" src="https://www.youtube.com/embed/a4IosLAbLXY" frameborder="0"
-            allowfullscreen=""></iframe>
-        </div>
+      <div class="screen2" style="width: 100%; height: 60%; background-color: aquamarine;">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col">순번</th>
+              <th scope="col">강좌명</th>
+              <th scope="col">강의번호</th>
+              <th scope="col">강의제목</th>
+              <th scope="col">피드백 제목</th>
+              <th scope="col">피드백 내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 행시작 -->
+            <tr>
+              <td>1</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>2</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>3</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>4</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>5</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>6</td>
+              <td>일본어문화</td>
+              <td>4</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>7</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+            <!-- 행시작 -->
+            <tr>
+              <td>8</td>
+              <td>일본어문화</td>
+              <td>1</td>
+              <td>오리엔테이션</td>
+              <td>수업 멈춰</td>
+              <td>수업이 너무 빨라ㅠㅠㅠㅠ</td>
+            </tr>
+            <!-- 행끝 -->
+          </tbody>
+        </table>
       </div>
-      <div class="screen2" style="width: 100%; height: 10%; background-color: gold;">
+      <div class="screen3" style="width: 100%; height: 10%; background-color: gold;">
         <div class="col text-center">
-          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">파일 첨부</a>
-          <div class="custom-file" style="width: 500px;">
-            <input type="file" class="custom-file-input" id="customFile"><!-- 파일첨부 -->
-            <label class="custom-file-label" for="customFile">Choose file</label>
-          </div>
-          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">과제 제출</a>
+          <a href="#" button type="button" class="btn btn-primary mr-5">돌아가기</a>
         </div>
       </div>
     </div>
     <!-- Page Content end -->
   </div>
   <!-- main frame wrapper end -->
-  <!-- 파일첨부 시작 -->
-  <script>
-    // Add the following code if you want the name of the file appear on select
-    $(".custom-file-input").on("change", function () {
-      var fileName = $(this).val().split("\\").pop();
-      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    });
-  </script>
-  <!-- 파일첨부 끝 -->
 
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>

@@ -15,6 +15,7 @@
     $(function () { resizeYoutube(); });
     function resizeYoutube() { $("iframe").each(function () { if (/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src"))) { $(this).css("width", "100%"); $(this).css("height", Math.ceil(parseInt($(this).css("width")) * 480 / 854) + "px"); } }); }
   </script>
+
 </head>
 
 <body>
@@ -105,25 +106,22 @@
         </div>
       </nav>
       <div class="screen1" style="width: 100%; height: 10%; background-color: bisque;">
-        <div class="col text-center">
-          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">피드백보내기</a>
+        <div style=" text-align: center;">
+          <h1>강좌 제목 | [강의 제목] | [비고]</h1>
         </div>
       </div>
       <div class="screen2" style="width: 100%; height: 70%; background-color: aquamarine;">
         <div class="col text-center">
-          <h1>일본어 문화</h1>
           <iframe width="854" height="480" src="https://www.youtube.com/embed/a4IosLAbLXY" frameborder="0"
             allowfullscreen=""></iframe>
         </div>
-      </div>
-      <div class="screen2" style="width: 100%; height: 10%; background-color: gold;">
         <div class="col text-center">
-          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">파일 첨부</a>
-          <div class="custom-file" style="width: 500px;">
-            <input type="file" class="custom-file-input" id="customFile"><!-- 파일첨부 -->
-            <label class="custom-file-label" for="customFile">Choose file</label>
-          </div>
-          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">과제 제출</a>
+          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">업로드</a>
+        </div>
+      </div>
+      <div class="screen1" style="width: 100%; height: 10%; background-color: gold;">
+        <div class="col text-center">
+          <a href="#" button type="button" class="btn btn-lg btn-primary mr-5">강의 등록</a>
         </div>
       </div>
     </div>
