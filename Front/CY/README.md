@@ -1,6 +1,150 @@
 # Study
 
+# 21/06/24
+
+트러블 슈팅
+
+포트번호를 지정전 : 넣는걸 .을 넣어서 에러가 발생했다. 에러 페이지를 읽고 해결하였다 (안드로이드)
+
+(1차시도)
+나의 오라클 계정안에 있는 MEMBER80 테이블에 컬럼으로 MEM_ID가 없어서 에러가 뜨는줄 알고
+컬럼추가후 COMMIT을 해서 다시 시도해봤지만 실패하였다.
+(2차시도)
+
+jsp 교재 156 페이지 참고
+
+flush : 지정할 JSP페이지를 실행하기 전에 출력 버퍼를 플러시 할지 여부를 결정한다. true이면 출력 버퍼를 플러시하고, false이면
+플러시 하지 않는다. 기본값은 false이다. 출력 버퍼를 플러시한다는 말은 `<jsp:inclde>`액션태그를 실행하는 시점에서
+출력버퍼에 저장된 main.jsp에 있는 a라는 내용을 플러쉬 한 뒤에 sub.jsp페이지로 흐름이 이동한다는 것을 의미한다. \*츌력 버퍼를 플러시하면 응답 상태 코드와 HTTP응답 해더가 웹브라우저가 함께 전송된다. 따라서 flush속성을 true로 지정하면
+이후 새로운 헤더정보를 추가해도 반영되지 않게 된다. `<jsp:include>`의 flush 속성이 true이면 sub.jsp에서
+`response.setHeader()`를 실행해도 헤더가 추가되지 않는다.
+
+forward는 제어권이 아예 넘어가기에 flush 속성이 필요없다.
+
+기본이 false라는 것은 가지고 있겠다라는 말이다.
+
+5교시
+
+`<div>` Block 요소 -> 자체크기지정 ajax,react에서는 div는 필수적인 태그다.
+
+`<%="세션"%>` 이름
+
+`$ajax();` => 원래는 함수가 맞지만 내부 클래스처럼 바라보는게 어떨까?
+그러면 우린 괄호안에 구현부가 와야한다고 생각이 될 것이다. 구현부가 온다는건 `{}`가 필요하다 생각이 들 것이고
+하나의 scope를 가지고 있기에 이안에 이벤트 처리, 속성값에 대한 처리, 함수 호출 같은 여러가지 것들을 담을 수 있는 모양새가 된다.(Syntax)
+자바에선 ```btn.addActionListenenr(new ActionListener) {
+actionPerFormed
+
+}```
+
+그 다음 그안에 오는 것중에
+
+\*URL : ==> `<from action = ..>` form태그는 사용자 입력값을 서버에 전달하려면 약속된 코드가 있어야하는데
+그영역이 form태그이다 `<from action = >~`jsp가 바로 오기보단 .do .nhn같은게 url로 오는게 좋다
+url로 오는걸 처리하는건 2개가 있는데
+
+Controller --> jsp
+RestController --> xxx.do , xxx.nhn => DataSet으로 생각해라 ==> 부트스트랩때 필수적이다.
+
+\*dataType ==> json, html은 정리를 하라
+
+통신
+XMLHttpRequest
+
+spring은 성열이형과 나의 코딩이 겉으로는 비슷해보이게 해준다..
+
+json일때는 `<Tag>`를 직접 써야한다.
+
+json으로 하지말고 xxx.do로 연결하여 forward로 연결해라 select이다 ajax는
+오라클 select , join, 프로시저가 중요하다
+
+xxx.do -> forward -> return "forward" : => xxx.jsp
+
+ajax를 쓸 때 json이든 html이든 jsp든 상관없다.
+
+show(), hide()는 쓰면 좀 매우 안 좋다. 야근한다.
+
+6교시
+
+`<jsp:forward>`
+
+forward -> jsp
+
+jsp란 서블릿(java도 포함)은 한 끗차이다.
+서블릿은 통신이 된다. java는 통신(웹 베이스)이 안된다.
+
+Web -> http프로토콜을 기본적으로 지원해야 하는데 java는 없다.
+
+네트워크에서는 java를 쓰는것보다 서블릿을 쓰는게 편하다.
+하지만 안드로이드와 서블릿 사이엔 Tomcat은 필수다.
+처리를 해주려면 jsp
+
+forward든 include는 확장자는 jsp
+듣기만 하는건 html 하지만 action이없다.
+이벤트를 참여하고 싶으면 버튼 -> 이벤트처리는 js -> js는 ajax를 호출
+`<form>`
+
+````
+  ```$.ajax({
+    url
+  })
+````
+
+location href="xxx.do"
+
+.
+`<jsp:include>`
+
+include -> jsp
+
+\*서블릿을 만나는 방법
+`<form>`, ajax, location href를 쓴다.
+
+`<a href ="js">`(앵커) --> 여기서도 ajax 연결이 가능 앵커 다음엔 function이 들어갈 수 있다.
+location href = "xxx.do"(페이지)
+
+onClick -> EventHandler와 같다.
+onKeyPress => api보기
+
+\*form, ajax, loaction href, `<a>`, EventHandler\*\*
+
+forward -> jsp
+
+include
+
+`<jsp:include>` 따로 관리하는게 액션 태그
+제어권이 다시 돌아와서 실행이 된다. 통장 따로
+값을 넘길 수 있다. 소스자체가 따로 되어 있어서 변수접근불가
+
+`@include`(디렉티브)도 제어권이 다시 돌아와서 실행이 된다. 통장 하나
+
+res.sendRedirect는 url도 바뀌고 그 밑에는 실행이 안된다.
+
+=
+
+
+
+
+
+실행순서
+java(처리주체는 톰캣) -> 서블릿(화면 그리는거 개노가다) -> jsp
+
+자바스크립트 자리에 ajax를 쓸 수 있다 (비동기를 누릴 수 있다.)
+
+6교시
+
+$(document).ready(function(){
+ajax
+
+}) ==> 이건 무조건 백퍼센트 실행이 된다.
+
+login.do -> TOMCAT
+
+XMLHttpRequest -> 브라우저에 내장되어있다. 우린 $.ajax()로 부르긴만하면되고 ()로 구현만하면된다.
+
 # 21/06/23
+
+트러블 슈팅
 
 https://user-images.githubusercontent.com/78460496/123098750-6de1c080-d46c-11eb-836c-fbc385c4b0b1.JPG
 
