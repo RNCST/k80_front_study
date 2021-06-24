@@ -6,7 +6,7 @@
 %>
 <!-- Page Content start -->
 <!-- <div id="content" class="p-4 p-md-5"> -->
-           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
 
           <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -21,7 +21,21 @@
           </button>
           <!-- Page Content Header Start -->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+            <ul class="nav navbar-nav ml-auto">
+              <!-- 현재보고있는 nav item은 calss active를 줄것. -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Page Content Header menu -1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page Content Header menu -4</a>
+              </li>
+            </ul>
           </div>
           <!-- Page Content Header end -->
         </div>
@@ -91,7 +105,7 @@
         </div>
         <div style="height: 10%;"></div>
         <div style="height: 20%; padding-right: 13%;">
-          <a href="#" button type="button" class="btn float-right btn-primary btn-lg">예약</a>
+          <a href="#" button type="button" class="btn btn-primary">예약</a>
         </div>
       </div>
       <div class="screen4" style="width : 40%; height: 30%; float: right; background-color: pink;">

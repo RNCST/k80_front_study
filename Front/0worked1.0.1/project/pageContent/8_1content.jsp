@@ -141,69 +141,123 @@
           </tbody>
         </table>
       </div>
-      <div class="screen3" style="width: 100%; height: 55%; background-color: bisque;">
+      <div class="screen3" style="width: 100%; height: 60%; background-color: bisque;">
         <div class="container-fluid">
           <div class="row" style="text-align: center;">
             <div class="col-md-3">
               <img src="images/doge.png" style="width: 200px; height: 200px; margin-top: 5%;">
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="한글 이름 : 박정호" aria-label="Username"
-                aria-describedby="basic-addon1" style="margin-top: 20%;">
-              <input type="text" class="form-control" placeholder="영문 이름 : Park Jeonh Ho" aria-label="Username"
-                aria-describedby="basic-addon1" style="margin-top: 10%;">
+              <div class="input-group mb-3" style="margin-top: 20%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">이름</span>
+                </div>
+                <input type="text" class="form-control" placeholder="이름을 입력해주세요" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="학번 : 1232321321" aria-label="Class of"
-                aria-describedby="basic-addon1" style="margin-top: 20%;">
+              <div class="input-group mb-3" style="margin-top: 20%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">학번</span>
+                </div>
+                <input type="text" class="form-control" placeholder="학번을 입력해주세요" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-3"></div>
           </div>
           <div class="row" style="margin-top: 2%; text-align: center;">
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="대학 : 인문 사회 대학" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">대학</span>
+                </div>
+                <input type="text" class="form-control" placeholder="인문사회대학" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="학부 : 외국어 학부" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">학부</span>
+                </div>
+                <input type="text" class="form-control" placeholder="외국어학" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="학과 : 일어국문학" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">학과</span>
+                </div>
+                <input type="text" class="form-control" placeholder="컴퓨터공학과" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="구분 : 대학생/교수" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">구분</span>
+                </div>
+                <input type="text" class="form-control" placeholder="대학생/교수" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
           </div>
           <div class="row" style="margin-top: 2%; text-align: center;">
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="학적상태 : 재학" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">학적상태</span>
+                </div>
+                <input type="text" class="form-control" placeholder="재학" id="basic-url" aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="최종학적변동일자 : 2020-02-02" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">최근학적변동일자</span>
+                </div>
+                <input type="text" class="form-control" placeholder="2020-02-02" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="최종 이수 학년 및 학기" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">최종 이수 학년 및 학기</span>
+                </div>
+                <input type="text" class="form-control" placeholder="최종 이수 학년 및 학기" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
           </div>
           <div class="row" style="margin-top: 2%; text-align: center;">
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="부전공 : 해당없음" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">부전공</span>
+                </div>
+                <input type="text" class="form-control" placeholder="해당없음" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-3">
-              <input type="text" class="form-control" placeholder="입학일자 : 2002-02-02" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">입학일자</span>
+                </div>
+                <input type="text" class="form-control" placeholder="2002-03-01" id="basic-url"
+                  aria-describedby="basic-addon3">
+              </div>
             </div>
             <div class="col-md-6"></div>
           </div>
         </div>
       </div>
+    </div>
+    
 	<script src="./js/toggleAction.js"></script>
 <!-- </div> -->
 <!-- Page Content end -->
