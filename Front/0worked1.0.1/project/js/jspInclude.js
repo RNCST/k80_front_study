@@ -385,11 +385,11 @@ $(function() {
 		return false;
 	}	
 						function onClickMenu9_12(e){
-		console.log('onClickMenu9_11');
+		console.log('onClickMenu9_12');
 		e.preventDefault();
 		$.ajax({
 			type :'get',
-			url:'pageContent/9_11content.jsp',
+			url:'pageContent/9_12content.jsp',
 			dataType:'html',
 			success: function(data){
 				$content.html(data).trigger("create");

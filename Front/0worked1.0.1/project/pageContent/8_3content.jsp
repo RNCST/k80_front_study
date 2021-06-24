@@ -6,7 +6,7 @@
 %>
 <!-- Page Content start -->
 <!-- <div id="content" class="p-4 p-md-5"> -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
 
           <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -66,28 +66,28 @@
           </div>
           <div class="row" style="margin-top: 5%; text-align: center;">
             <div class="col-md-3">
-              <select class="selectpicker">
+              <select class="custom-select">
                 <option>대학:인문사회대학</option>
                 <option>대학:공과대학</option>
                 <option>대학:자연과학대학</option>
               </select>
             </div>
             <div class="col-md-3">
-              <select class="selectpicker">
+              <select class="custom-select">
                 <option>학부:외국어학부</option>
                 <option>학부:건축학부</option>
                 <option>학부:예체능부</option>
               </select>
             </div>
             <div class="col-md-3">
-              <select class="selectpicker">
+              <select class="custom-select">
                 <option>학과:일어일문학</option>
                 <option>학과:컴퓨터공학</option>
                 <option>학과:기계공학</option>
               </select>
             </div>
             <div class="col-md-3">
-              <select class="selectpicker">
+              <select class="custom-select">
                 <option>구분:대학생</option>
                 <option>구분:교직원</option>
               </select>
@@ -95,7 +95,7 @@
           </div>
           <div class="row" style="margin-top: 5%; text-align: center;">
             <div class="col-md-3">
-              <select class="selectpicker">
+              <select class="custom-select">
                 <option>학적상태:재학</option>
                 <option>학적상태:휴학</option>
                 <option>학적상태:졸업</option>
@@ -105,17 +105,29 @@
               <input id="datepicker" width="276" />
             </div>
             <div class="col-md-6"></div>
+
           </div>
         </div>
       </div>
 
 
-      <div class="screen2" style="width: 100%; height: 10%; background-color: aquamarine;">
+      <div class="screen2" style="width: 70%; height: 10%; float: left; background-color: aquamarine;">
         <div class="col text-center">
-          <a href="#" button type="button" class="btn btn-primary mr-5">추가</a>
+          <a href="#" button type="button" class="btn btn-primary mr-5">수정</a>
           <a href="#" button type="button" class="btn btn-primary">취소</a>
         </div>
       </div>
+      <div class="screen3" style="width: 30%; height: 10%; float: right; background-color: pink;">
+        <h5>정보 삭제의 경우 정보 보호법에 따라 지원하지 않습니다. 퇴직 , 졸업 후 5년간 보관후 자동삭제됩니다.</h5>
+      </div>
+      <script>
+       $('#datepicker').datepicker({
+      uiLibrary: 'bootstrap4'
+    });
+    </script>
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <script src="./js/toggleAction.js"></script>
+      <script src="./js/toggleAction.js"></script>
 <!-- </div> -->
 <!-- Page Content end -->

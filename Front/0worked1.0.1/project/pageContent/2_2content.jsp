@@ -41,7 +41,7 @@
         </div>
       </nav>
 
-      <div class="screen1" style="width: 100%; height: auto%; background-color: bisque;">
+      <div class="screen1" style="width: 100%; height: auto%; text-align: center; background-color: bisque;">
             <select class="custom-select" style="width:auto;">
               <option >2020/1학기</option>
               <option >2020/2학기</option>

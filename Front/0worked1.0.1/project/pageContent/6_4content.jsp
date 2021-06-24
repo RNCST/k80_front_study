@@ -40,7 +40,23 @@
 </nav>
 <!-- 밑부터 메인 프레임 속 내용-->
 <div style="text-align: center;">
-	<button type="button" class="btn btn-primary btn-lg">피드백 보내기</button>
+	<div class="screen1" style="width: 100%; height: 10%; background-color: bisque;">
+        <div style=" text-align: center;">
+          <h1>일본어문화 (피드백 보내는 강의 제목) </h1>
+        </div>
+      </div>
+      <div class="screen2" style="width: 100%; height: 10%;  background-color: aquamarine;">
+        <div class="form-title">
+          <input type="text" name="bdTitle"  class="form-control mt-4 mb-2" placeholder="피드백을 입력해주세요." required>
+        </div>
+      </div>
+
+        <div class="col text-center">
+          <a href="#" button type="button" class="btn btn-primary mr-5">피드백 보내기</a>
+          <a href="#" button type="button" class="btn btn-primary">작성취소</a>
+        </div>
+      </div>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="js/toggleAction.js"></script> 
