@@ -73,6 +73,15 @@ ajax index.jsp 가면 로그인 로그아웃 기본 함수
 http://localhost:7000/ajax80/login/logout.jsp 에서 로그인 버튼을 눌렀을 때 textbox에서 받은 value값을 탈취하고(ID,NAME)으로 탈취
 탈취한 값은 오라클을 경유 후 프로시저 실행 //-> 실행한 값이 TRUE이면 Session 을 먼저 생성하고 redirect로 간다. False면 alrert을 띄운다.
 
+제이쿼리 사용할 수 있게 3.34? 그거 임포트
+$.ajax(){}
+
+http://localhost:7000/ajax80/login/ajax_index.jsp
+http://localhost:7000/login/jsonLogin
+http://localhost:7000/ajax80/login/logout.jsp
+http://localhost:7000/ajax80/login/loginAccount.jsp
+http://localhost:7000/login/end
+
 # 21/06/24
 
 트러블 슈팅
