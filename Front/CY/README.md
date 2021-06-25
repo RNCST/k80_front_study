@@ -2,6 +2,10 @@
 
 # 21/06/25
 
+프로젝트 기능
+
+https://getbootstrap.com/docs/4.6/components/breadcrumb/
+
 2교시
 
 POJO는 서블릿 의존도가 100%다
@@ -54,6 +58,20 @@ url는 web.xml이 해주는데 `<servlet>, <servlet-mapping>`여기서 해준다
 
 세션 생성하기 : jsp에서 세션을 생성하려면 다음과 같이 PAGE 디렉티브의 session 속성을 true로 지정하면 된다.
 `<@% page session = "true" %>`
+
+주소 제이슨 로그인 커리 치면 세션이 살아난다.jsonLogin
+LoginAccount -> 로그아웃
+로그아웃이 로그인.JSP
+ajax index.jsp 가면 로그인 로그아웃 기본 함수
+이걸 이용해서 각각 얘기한 페이지 ajax니까 제이쿼리 그거 넣기 3.3.4
+
+함수가 완성이 안되어 있으니까
+로그아웃 -> 세션을 날리는 메소드 로그아웃이 되었습니다 메시지 띄우닌 함수
+로그인창으로 리다이렉트 해주는 함수
+
+과제
+http://localhost:7000/ajax80/login/logout.jsp 에서 로그인 버튼을 눌렀을 때 textbox에서 받은 value값을 탈취하고(ID,NAME)으로 탈취
+탈취한 값은 오라클을 경유 후 프로시저 실행 //-> 실행한 값이 TRUE이면 Session 을 먼저 생성하고 redirect로 간다. False면 alrert을 띄운다.
 
 # 21/06/24
 
