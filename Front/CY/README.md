@@ -1,5 +1,30 @@
 # Study
 
+# 21/06/26
+
+ajax란?
+Asychronous JavaScript and XML의 약자
+
+자바 스크립트를 이용해서 비동기식으로 서버와 통신하는 방식 이 때 XML을 이용한다.
+꼭 XML을 이용할 필요는 없고 최근에는 json을 더 많이 이용한다.
+
+`$.ajax(settings)`
+`jQuery`를 이용한 ajax 통신의 가장 기본적인 API
+
+주요속성
+
+data : 서버에 전송할 데이터 key/value형식의 관계
+dataType : 서버가 리턴하는 데이터타입 (xml,json, scriptm, html)
+type : 서버로 전송하는 데이터의 타입(POST, GET)
+url : 데이터를 전송할 URL
+success : ajax 통신에 성공했을 때 호출할 이벤트 핸들러 위치
+
+
+
+
+
+
+--------------------
 # 21/06/25
 
 프로젝트 기능
