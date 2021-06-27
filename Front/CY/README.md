@@ -2,6 +2,9 @@
 
 # 21/06/26
 
+
+
+
 ajax란?
 Asychronous JavaScript and XML의 약자
 
