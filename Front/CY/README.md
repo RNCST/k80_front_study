@@ -1,5 +1,115 @@
 # Study
 
+# 21/06/26
+
+
+
+
+ajax란?
+Asychronous JavaScript and XML의 약자
+
+자바 스크립트를 이용해서 비동기식으로 서버와 통신하는 방식 이 때 XML을 이용한다.
+꼭 XML을 이용할 필요는 없고 최근에는 json을 더 많이 이용한다.
+
+`$.ajax(settings)`
+`jQuery`를 이용한 ajax 통신의 가장 기본적인 API
+
+주요속성
+
+data : 서버에 전송할 데이터 key/value형식의 관계
+dataType : 서버가 리턴하는 데이터타입 (xml,json, scriptm, html)
+type : 서버로 전송하는 데이터의 타입(POST, GET)
+url : 데이터를 전송할 URL
+success : ajax 통신에 성공했을 때 호출할 이벤트 핸들러 위치
+
+
+
+
+
+
+--------------------
+# 21/06/25
+
+프로젝트 기능
+
+https://getbootstrap.com/docs/4.6/components/breadcrumb/
+
+2교시
+
+POJO는 서블릿 의존도가 100%다
+response가 있어야 페이지 이동을 할 수 있고
+여기에 해당하는 메소드 이름이 sendRedirect("a.jsp"이다. 이게 세션과 무슨관계일까?
+우리가 어떤 페이지로 이동하는데 유지 문제(세션과 쿠기)이다.
+이 공통적인 문제가 http프로토콜이다. 이 프로토콜은 특징이 stateless이다. 그러므로 세션과 관계가 있다
+반드시 앞쪽에 response가 있어야 한다.
+부트에선 리턴타입이 String으로 바뀌었기에 `return "redirect:a.jsp "forward:a.jsp ` return 타입이 pojo에선 void였는데
+스프링에선 String으로 바뀌었다.
+``return "a.jsp"` ==> ModelAndView 패턴으로 처리가 된다.
+
+`"member/login"` WEB-INF/jsp + page name .jsp이렇게 해서 URL패턴이 완성 앞에 접두어 리다이렉트나 포워드가 사라지면
+ModelAndView가 부활한다.
+
+jsp 경우 세션이라는 객체를 인스턴스화를 사용하지 않고 바로 사용 가능
+(XMLHttpRequest)처럼 ajax도 내장객체를 가지고 있다.
+Tomcat 안쪽에는 서블릿jar와 jsp.jar가 반드시 있어야한다.
+
+    우린 Controller계층을 얘기해야되는데 쓰이는 @ 는 @Controller @RestController
+
+    데이터로직을 태우는 프로세스는 Chant  데이터 분석(수집)
+
+이런 경우엔 RestController
+페이지 처리는 @Controller가 해준다
+
+url는 web.xml이 해주는데 `<servlet>, <servlet-mapping>`여기서 해준다.
+`@RequestMapping, @GetMapping, @PostMapping` => 메소드로 일괄처리하는게 좋다.
+
+페이지 233페이지에서는 jsp에서 session 을 사용해서 내장객체를 이용한다.
+
+`HttpSession = req.getSession`
+
+안드에서는 세션과 쿠키를 사용할 수 없다
+
+`session.invalidate();` ==> 종료하는법 로그아웃 눌렷을때
+
+사용자가 입력한 값을 get방식으로 단위테스트 하는게 가능하다. 보안 생각하면 post방식으로 바꿔야하지만
+그쪽에선 테스트가 불가능하니까 get방식으로 테스트해라
+
+웹 컨테이너는 기본적으로 한 웹브라우저마다 한 세션을 생성한다.
+웹브라우저마다 세션이 따로 존재하기 때문에 세션은 웹브라우저와 관련된 정보를 저장하기에 알맞은 장소이다.
+죽, 쿠키가 클라이언트 측의 데이터 보관소라면 세션은 서버(캐쉬 메모리)측의 데이터 보관소인 것이다.
+
+// 쿠키 : 쿠키는 클라이언트(브라우저) 로컬에 저장되는 키와 값이 들어있는 작은 데이터 파일입니다
+
+// 세션 :세션은 쿠키를 기반하고 있지만, 사용자 정보 파일을 브라우저에 저장하는 쿠키와 달리 세션은 서버 측에서 관리합니다
+
+// 캐쉬 메모리 : 컴퓨터 시스템의 성능을 향상시키기 위해 별도로 탑재된 일종의 메모리이자, 하드웨어 캐시.
+
+세션 생성하기 : jsp에서 세션을 생성하려면 다음과 같이 PAGE 디렉티브의 session 속성을 true로 지정하면 된다.
+`<@% page session = "true" %>`
+
+주소 제이슨 로그인 커리 치면 세션이 살아난다.jsonLogin
+LoginAccount -> 로그아웃
+로그아웃이 로그인.JSP
+ajax index.jsp 가면 로그인 로그아웃 기본 함수
+이걸 이용해서 각각 얘기한 페이지 ajax니까 제이쿼리 그거 넣기 3.3.4
+
+함수가 완성이 안되어 있으니까
+로그아웃 -> 세션을 날리는 메소드 로그아웃이 되었습니다 메시지 띄우닌 함수
+로그인창으로 리다이렉트 해주는 함수
+
+과제
+http://localhost:7000/ajax80/login/logout.jsp 에서 로그인 버튼을 눌렀을 때 textbox에서 받은 value값을 탈취하고(ID,NAME)으로 탈취
+탈취한 값은 오라클을 경유 후 프로시저 실행 //-> 실행한 값이 TRUE이면 Session 을 먼저 생성하고 redirect로 간다. False면 alrert을 띄운다.
+
+제이쿼리 사용할 수 있게 3.34? 그거 임포트
+$.ajax(){}
+
+http://localhost:7000/ajax80/login/ajax_index.jsp
+http://localhost:7000/login/jsonLogin
+http://localhost:7000/ajax80/login/logout.jsp
+http://localhost:7000/ajax80/login/loginAccount.jsp
+http://localhost:7000/login/end
+
 # 21/06/24
 
 트러블 슈팅
@@ -149,9 +259,11 @@ XMLHttpRequest -> 브라우저에 내장되어있다. 우린 $.ajax()로 부르�
 https://user-images.githubusercontent.com/78460496/123098750-6de1c080-d46c-11eb-836c-fbc385c4b0b1.JPG
 
 ```
- implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.4.7'
-   implementation group: 'org.bgee.log4jdbc-log4j2', name:'log4jdbc-log4j2-jdbc4.1', version: '1.16'
-   testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.31'
+
+implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.4.7'
+implementation group: 'org.bgee.log4jdbc-log4j2', name:'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.31'
+
 ```
 
 위 코드들을 전부 주석처리하여 뜬 에러이다. 주석처리를 풀고 해결하였다.
@@ -161,25 +273,27 @@ https://user-images.githubusercontent.com/78460496/123098758-6f12ed80-d46c-11eb-
 오라클 프로시저를 넣지 않아서 생긴 에러다.
 
 ```
+
 CREATE OR REPLACE PROCEDURE SCOTT.proc_login80(p_id IN varchar2
-                                      ,p_pw IN varchar2
-                                      , msg OUT varchar2)
+,p_pw IN varchar2
+, msg OUT varchar2)
 IS
-  r_status varchar2(100);
+r_status varchar2(100);
 BEGIN
-  SELECT NVL((SELECT mem_id FROM member80
-               WHERE mem_id=p_id),'-1') INTO r_status
-   FROM dual;
-  IF r_status=p_id THEN
-     SELECT NVL((SELECT mem_id
-                  FROM member80
-                 WHERE mem_id=p_id AND mem_pw=p_pw),'비밀번호가 틀립니다.') into msg
-      FROM dual;
-  ELSIF r_status='-1' THEN
-    msg:='아이디가 존재하지 않습니다.';
-  END IF;
+SELECT NVL((SELECT mem_id FROM member80
+WHERE mem_id=p_id),'-1') INTO r_status
+FROM dual;
+IF r_status=p_id THEN
+SELECT NVL((SELECT mem_id
+FROM member80
+WHERE mem_id=p_id AND mem_pw=p_pw),'비밀번호가 틀립니다.') into msg
+FROM dual;
+ELSIF r_status='-1' THEN
+msg:='아이디가 존재하지 않습니다.';
+END IF;
 END;
 /
+
 ```
 
 다음과 같은 프로시저 를 넣고 서버 재기동 후 해결 하였다.
@@ -261,6 +375,7 @@ ft.commit();
 4교시
 
 ```
+
   <script>
     function startMethod(){
     	$.ajax({
@@ -447,12 +562,12 @@ read.jsp에서 수정버튼을 누르면 dialog는 기본적으로(Model)속성�
 
 jsp 500 페이지
 
-NowServlet extends HttpServlet  
+NowServlet extends HttpServlet
 "통신" => 약속(http) 규칙으로 명령을 한거죠 이 단어를 쓰면 통신을 할수 있어요 어떤 통신 ? stateless
 그래서 세션이나 쿠기가 필요하다는 것이다. 재훈이형이 장바구니에 우유를 넣을때 내가 그 우유를 못뺴는거
 그게 쿠기다. 장바구니 찜 기능 => 이것도 쿠키다 stateless 캐쉬 메모리
 자바가 있는 위치와 jsp가 있는 위치가 떨어져 있다
-src  
+src
 응답(response)이 성공적으로 나가면 톰캣이 200번이 찍힌다.
 모든 서비스는 요청과 응답으로 이뤄져있다.
 servlet에는 메인 메소드가 없다 exe? 브라우저? 브라우저다 왜? html이니까...
@@ -477,7 +592,7 @@ mav.addObject(key,value); = request.setAttribute() 비슷하다?
 
 Request Scope는 통신에서 변수를 유지하고자 할 때 사용한다 ==> mav.addObject는 마치 request.setAttribute()한것과 같다.
 
-a라는 페이지(a.jsp)  
+a라는 페이지(a.jsp)
 sonata myCar = new sonata();
 
 b라는 페이지 (b.jsp)
@@ -627,7 +742,7 @@ putExtra(이름,값) 를 사용한다.
 
 FILO 구조이다.
 
-S.A -->활성화되면 foreground상태로 나온다.  
+S.A -->활성화되면 foreground상태로 나온다.
 F.A
 
 res ---> R.java 리소스를 따로 관리하며 int 단위로 관리
@@ -741,7 +856,7 @@ https://developer.android.com/jetpack/androidx/migrate?hl=ko
 1교시
 
 dev_jsp(war) -> 안드(웹앱) --> 서블릿 ->ui -> html
-Activity(device) ->s/w (device)  
+Activity(device) ->s/w (device)
 mainfest 안쪽에 서비스나 액티비티가 있다. ->lifecycle(생명주기)를 관리해준다(컴포넌트)
 자바랑 다른 구조는 디바이스가 다르기 때문
 
@@ -900,16 +1015,16 @@ findViewById(R.id.column);
 이전글의 include 액션태그와 거의 비슷하지만 한번 흐름이 넘어가면 제어가 다시 돌아오지 않는다는 차이점이 있습니다. 두번째 차이점은 include 액션태그는 a.jsp에서 출력하는 내용도 브라우저로 출력되는 반면 forward 액션태그는 a.jsp에서 출력되는 내용은 무시되고 b.jsp에서 출력하는 내용만 브라우저로 전달됩니다. 따라서 a.jsp에서는 출력 이외의 내용만 실행하고 b.jsp로 제어를 넘겨야 합니다.
 
 forward 액션태그는 다음과 같은 형식으로 사용합니다.
-<jsp:forward page="이동할 JSP 페이지" />  
+<jsp:forward page="이동할 JSP 페이지" />
 cs
 
 include 액션 태그에서 처럼 페이지를 그대로 지정하거나 표현식을 통해 지정할 수 있습니다.
-<jsp:forward page="forwarding.jsp" />  
+<jsp:forward page="forwarding.jsp" />
 cs
 
 표현식을 사용한 경로 지정
-<%  
- String jspUrl = "forwarding.jsp";
+<%
+String jspUrl = "forwarding.jsp";
 %>
 <jsp:forward page="<%= jspUrl %>" />
 
@@ -1074,10 +1189,10 @@ easyui 에 속지를 넣었다. 삭제 ->비번 비교 a_b_jsp
 
 크롬 -> 인터프리터 ->Tag를안씀
 
-브라우저 document.write("Tag")  
- 자바문법으론 out.print("")
-개행 처리 시 ln은 의미가 없다 <br>쓴다  
- 처리할때 out.print("<br>")
+브라우저 document.write("Tag")
+자바문법으론 out.print("")
+개행 처리 시 ln은 의미가 없다 <br>쓴다
+처리할때 out.print("<br>")
 ((<%=%> )))쓴다(내장객체이기에) ;을 쓰지 않는다
 
 html은정적만 올수있다 fetch하고 그대로 처리 쿠키 -> local
@@ -1090,8 +1205,8 @@ html은정적만 올수있다 fetch하고 그대로 처리 쿠키 -> local
 
 ![2](https://user-images.githubusercontent.com/78460496/121451740-10179800-c9d9-11eb-98b7-d94a70971e01.JPG)
 
-let a = "<%= %>";  
- 정적(상수이다)->처리 주체가 서버이다.
+let a = "<%= %>";
+정적(상수이다)->처리 주체가 서버이다.
 이미 패치가 일어나서 변하면 안된다 우리가 쓰는 프로토콜은 stateless인데
 쿠키와 세션이 있고(유지 문제) 고정값이다. 자바스크립트와 익스프레션이 만났을때!
 
@@ -1158,13 +1273,13 @@ http://localhost:8000/board/jsonGetBoardList.sp4
   datagrid를 부른다.
     <table class = "클래스이름"  easyui-datagrid
     비동기로 처리하면 ajax
-           
+
     <script type"textjavascript
     $(document).ready()는 문서가 준비되면 매개변수로 넣은 콜백 함수를 실행하라는 의미입니다.
-    
+  
     <bean id class
             <property name= " " ref = "id"
-              
+  
             xml이라 문법이 다르다 tag와tag사이에 문법이 다르다.
 
 # 21/06/04
@@ -1190,3 +1305,7 @@ http://localhost:8000/board/jsonGetBoardList.sp4
 # 21/06/03
 
 Spring4_1_1/WebContent/WEB-INF/Web.xml
+
+```
+
+```
