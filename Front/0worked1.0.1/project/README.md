@@ -1,6 +1,12 @@
 # K80_FRONT_PRAC
 
-##21.06.42 front worked 1.0.0 ver 
+## 21.06.25 front worked 1.0.1 ver 
+
+모든 페이지 매핑 
+
+UX 고려 안함
+
+## 21.06.24 front worked 1.0.0 ver 
 
 Spring 프로젝트 안 WebContent 아래에 project 폴더채로 배포.
 
