@@ -2,7 +2,90 @@
 
 # 21/06/28
 
-책 205
+안드 보충
+
+안드로이드를 만들려면 확장자가 apk여야 한다.
+주요 구성은 `AndroidManifest`이다. 클라우드 같은 경우에는 -> `google key`(키값을 맞추려면 안드로이드 http key를 채번해야 한다. 그걸 안드로이드 쪽에서는 토큰으로 처리한다.)
+그 다음은 internet에 대한 옵션 그 다음은``` Activity```` 등록, `service(Firebase)`등록 결국 패턴 자체가 `Activity + Service + Activity`을 쓰게 된다.
+푸쉬알림(다 서비스 등록을 해야한다(manifest에다가))
+
+Activity쪽에서는 상속받는데 기본적으로 `Activity`같은 경우는 `Activity`에 대한 `LifeCycle`에 대한
+이해가 필요하다. 가장 먼저 필요한건 `onCreate()`로 화면을 내보내주는데 그 화면을 출력해주는게
+`setContentView()`이다 우리가 자바에서 아빠클래스를 호출하듯이 상위 라이프사이클 메소드를 호출해서
+초기화 시킨다.
+
+`Activity`가 기억될때 Bundel이 상태값을 관리한다.
+`Activity`와 `Activity`사이 혹은 `Fragment(java로 따지면 JPanel)`와 `Activity`
+
+안드로이드에서 사용자가 Back버튼을 터치하면 현재 액티비티가 종료되고 이전 액티비티로 되돌아간다.
+책331 참고해서 마저써라
+
+intent를 인스턴스화할떄 값은 putExtra() => 파라미터는 map과 같은 형식이다.
+실제로 다른 액티비티를 호출할떈 `StartActivity(int)Intent`
+
+getIntent()를통해 앞에있는 intent를 얻을 수 있고 `Activity`와 `Activity` 책 333페이지 참고해서 마저써라
+
+바깥쪽이 `Activity` 안쪽이 `Fragment`이다.
+그러면 이 `Activity` + Fragment는 서로 왔다갔다가 자유로워야 한다. `Activity`를 접근하려면
+getApplicationContext()를 통해 Fragment를 통해 `Activity`로 접근할 수 있다.
+Toast에서 부모창 접근도 이런 방식으로 가능하다.
+`Activity_main.xml`에 Fragment에 태그를 박으면 `<fragment>` `Activity`와 fargment가 한몸이 되는거다!
+
+하나는 `Activity`자신이 fragment가 되게 하는것 => 네비게이션이 따라다녀서 편하긴하지만 근데 `Activity`에서
+`Activity`로 가면 날라가는게 불편하다. 이런걸 재사용하기 위핸
+Toolbar.xml을 만들고 jsp include하듯이 include하면 된다 => 귀찮은 방법이라 상황에 맞게 하면 된다.
+
+`Activity`에서 `Activity` 갈때는 intent로 가고 `Activity`안에서 화면을 바꾸고 싶을때 바꾸면 페이지가 바뀐다 그럴떈 fragment를 쓰는데 두가지 방법이 있다. 하나는 그 자신이 fragment가 되는것(fragment 태그를 박는다. include안하고도 바텀 네비게이션바를 쓸수있다.)
+
+`<frameLayout>`안에 id( 이친구를 감싸고 있는`Activity`)를 넣는다.
+몇가지 fragment로 화면을 바꿔서 처리할 수 있다.
+
+---
+
+책 314페이지
+
+프래그먼트는 액티비티안에 위치할 수 있는 사용자 인터페이스 하나의 조각이라 할 수 있다.
+서브 액티비티로 생각해도 좋다 단 프래그먼트는 안드로이드매니페스트(퍼미션, 액티비티, 서비스, 테마)에 못넣는다.
+프래그먼트는 태블릿과 같은 넓은 화면을 가지는 모바일 장치를 위한 메커니즘이다.
+
+액티비티와 프래그먼트 책 316페이지
+
+`<framelayout>`에 id를 박아서 메인 액티비티를 꽂아 넣는다. ==> 이거 메모한 사람한테 물어보기
+
+`Activity`에서 `Activity` 값을 넘길떈 `intent`
+`intent`에서 `Fragment`로 넘기는거
+````Activity`에서 `Fragment`로넘기는거 반대로도
+
+책 317 프래그먼트의 특징
+ListFragment는 Dataset과 같아서 xml이 필요없다.
+--
+책318 페이지 코드
+`Activity`안에 프레그먼트가 있다. 타입이 view인데 inflater.inflate(R.layout.fragment1 container, false);
+Listfragment=> DataSet
+
+프래그먼트 안에서는 반드시 view.findbyID를 해야한다\*\*
+
+책 95 페이지
+책 113 페이지
+책 115페이지
+책 109페이지
+
+themes.xml
+`<style name="Theme.5Dogs69" parent="Theme.MaterialComponents.DayNight.NoActionBar" >` 이걸쓰면 액션바가 사라진다.
+
+책 196페이지
+책 190, 193 페이지
+
+화면을 만들려면 액티비티에서 액티비티 호출, 액티비티안에 프래그먼트를 넣는 방법 2가지를 알아야하고
+,, 한 액티비티에서 프래그먼트3개박아서 돌아가는거연습(fragment 트랜잭션)
+
+메뉴바 만들면 좋을거 같고
+
+이미지넣을때 배경없는 이미지넣기
+
+---
+
+jsp 책 205
 
 웹서버는 쿠키를 이용해서 웹 브라우저에 정보를 전송할 수 있다. 웹 서버로부터 쿠킬르 전달받은 웹 브라우저는
 이후 웹서버에 요청을 보낼때 쿠키를 함께 전송한다. 이를 사용하면 웹서버와 웹 브라우저는 필요한 값을 공유하고
@@ -44,11 +127,6 @@ JSP는 다음 코드를 사용해서 쿠키 값을 읽어올 수 있다.
 삭제할땐...
 `session.invalidate();`//전체삭제
 `session.removeAttribute("notebook");` //부분 삭제
-
-
-
-
-
 
 # 21/06/26
 
