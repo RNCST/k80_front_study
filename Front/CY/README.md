@@ -1,9 +1,56 @@
 # Study
 
+# 21/06/28
+
+책 205
+
+웹서버는 쿠키를 이용해서 웹 브라우저에 정보를 전송할 수 있다. 웹 서버로부터 쿠킬르 전달받은 웹 브라우저는
+이후 웹서버에 요청을 보낼때 쿠키를 함께 전송한다. 이를 사용하면 웹서버와 웹 브라우저는 필요한 값을 공유하고
+상태를 유지할 수 있다.
+
+브라우저마다 세션아이디가 부여된다.
+세션아이디는 쿠키에 저장된다.
+
+쿠키는 클라이언트측에 저장된다. - text
+
+쿠키는 생성한 후 반드시 내려야한다.
+
+`response.addCookie(쿠키에대한 주소번지)`
+`Cookie c1 = new Cookie("notebook","gram");`
+`c1.setMaxAge(30);`
+`c1.setPath("/");` 세션처럼 선언만 하면 되는게 아니라 Path도 신경 써야함
+`response.addCookie(c1);`
+쿠키를 사용할땐 임시저장할 것들(보안에 중요하지 않은 것들)
+장바구니, 비밀번호 임시저장, 배너 열고 닫는거..이럴떈 쿠키를 쓴다.(노출되도 상관없는 것들)
+\*\* 부트 스트랩은 jquery에서 사용하는 쿠키(별도로 제공한다)를 사용하는게 좋다 -> 강사님의견
+
+쿠키는 삭제할 때도 반드시 인스턴스화를 해야함
+`Cookie c1 = new Cookie("notebook","");`
+`c1.setMaxAge(0);`
+`response.addCookie(c1);`
+
+쿠키를 생성하면, 그 이후부터는 해당 쿠키를 사용할 수 있다. 웹 브라우저는 요청 헤더에 쿠키를 저장해서 보내며,
+JSP는 다음 코드를 사용해서 쿠키 값을 읽어올 수 있다.
+`Cookie[] cookies = request.getCookies();`
+`for(int i =0; i<cookies.length;i++){`
+`out.print(cookies[i].getName() +","+cookies[i].getValue());`
+`}`
+
+세션에선..
+`session.setAttribute("notebook","gram");`
+`session.getAttribute("notebook");`
+세션 타임 - 30분 (톰캣서버 기준이다.)
+
+삭제할땐...
+`session.invalidate();`//전체삭제
+`session.removeAttribute("notebook");` //부분 삭제
+
+
+
+
+
+
 # 21/06/26
-
-
-
 
 ajax란?
 Asychronous JavaScript and XML의 약자
@@ -22,12 +69,8 @@ type : 서버로 전송하는 데이터의 타입(POST, GET)
 url : 데이터를 전송할 URL
 success : ajax 통신에 성공했을 때 호출할 이벤트 핸들러 위치
 
+---
 
-
-
-
-
---------------------
 # 21/06/25
 
 프로젝트 기능
