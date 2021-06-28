@@ -1,5 +1,9 @@
 # K80_FRONT_PRAC
 
+## 21.06.28 front worked 1.1.2 ver 
+모든 페이지 숫자형 이름에서 알파벳이름으로 바꿈.
+StuInfo_StuTotalInfo.jsp 만 ID값들 다 나눠놓음 .
+
 ## 21.06.25 front worked 1.0.1 ver 
 
 모든 페이지 매핑 
