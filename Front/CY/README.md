@@ -128,6 +128,17 @@ JSP는 다음 코드를 사용해서 쿠키 값을 읽어올 수 있다.
 `session.invalidate();`//전체삭제
 `session.removeAttribute("notebook");` //부분 삭제
 
+# 21/06/27
+
+일요일 트러블 슈팅 => 이클립스 렉은 쓸모없는 프로젝트들을 삭제하니 가벼워진 느낌이다.
+
+https://user-images.githubusercontent.com/78460496/123655889-60607800-d86a-11eb-8efb-2f2eec827815.JPG
+
+https://user-images.githubusercontent.com/78460496/123655900-622a3b80-d86a-11eb-8c92-deb87dfa7387.JPG
+
+다음 에러는 어째서인지 WEB-INF밑에 있는 mybatis-config.xml이 지워져서 없는 상태로 서버를 돌리니 발생한 에러들이다.
+에러 콘솔을 세심히 관찰해야 할 필요성을 느꼈다. mybatis-config.xml을 강사님 github소스로 받아서 해결하였다.
+
 # 21/06/26
 
 ajax란?
