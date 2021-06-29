@@ -1,5 +1,44 @@
 # Study
 
+# 21/06/29
+
+안드로이드
+
+툴바를 추가하는 방법
+
+1. androidx패키지에 toolbar추가(지원 라이브러리)  
+   `implementation 'androidx.appcompat:appcompat:1.3.0'`
+
+2. 액티비티가 AppCompatActivity를 상속 받음
+   `public class MainActivity extends AppCompatActivity{`
+
+3. 기본 앱바를 제거(themes.xml)
+   ` <style name="Theme.ActionBar80" parent="Theme.AppCompat.Light.NoActionBar">` <!--액션바 -->
+
+4. 툴바를 레이아웃에 추가
+   `toolbar_main.xml추가`
+
+5. 툴바를 액티비티에의 앱바로 사용하도록 갱신처리
+   `Toolbar toolbar = findViewById(R.id.toolbar);`
+   `setSupportActionBar(toolbar);`
+
+액션을 앱바에 추가하는 방법
+
+1.액션의 아이콘과 텍스트로 사용할 리소스 추가
+
+2. 메뉴 리소스 파일에 액션 정의하기
+
+3. 앱바에 메뉴 리소스를 추가하도록 액티비티에 지시`(onCreateOptionMenu())`
+
+4. 클릭했을 때 어떤 액션을 수행할지 코드로 정의하기 `onOptionItemSelected()`
+
+`onCreate()`
+
+`onAttach()` : 프래그먼트가 액티비티에 연결되었을 떄
+`onCreate()` : 프래그먼트 초기화
+`onCreateView()` : 레이아웃 inflater로 자신의 뷰를 만듦
+`onhActivityCreated()` : onCreate메소드가 완료되면 호출
+
 # 21/06/28
 
 안드 보충
