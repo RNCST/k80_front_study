@@ -1,9 +1,191 @@
 # Study
 
+# 21/06/29
+
+안드로이드
+
+툴바를 추가하는 방법
+
+1. androidx패키지에 toolbar추가(지원 라이브러리)  
+   `implementation 'androidx.appcompat:appcompat:1.3.0'`
+
+2. 액티비티가 AppCompatActivity를 상속 받음
+   `public class MainActivity extends AppCompatActivity{`
+
+3. 기본 앱바를 제거(themes.xml)
+   ` <style name="Theme.ActionBar80" parent="Theme.AppCompat.Light.NoActionBar">` <!--액션바 -->
+
+4. 툴바를 레이아웃에 추가
+   `toolbar_main.xml추가`
+
+5. 툴바를 액티비티에의 앱바로 사용하도록 갱신처리
+   `Toolbar toolbar = findViewById(R.id.toolbar);`
+   `setSupportActionBar(toolbar);`
+
+액션을 앱바에 추가하는 방법
+
+1.액션의 아이콘과 텍스트로 사용할 리소스 추가
+
+2. 메뉴 리소스 파일에 액션 정의하기
+
+3. 앱바에 메뉴 리소스를 추가하도록 액티비티에 지시`(onCreateOptionMenu())`
+
+4. 클릭했을 때 어떤 액션을 수행할지 코드로 정의하기 `onOptionItemSelected()`
+
+`onCreate()`
+
+`onAttach()` : 프래그먼트가 액티비티에 연결되었을 떄
+`onCreate()` : 프래그먼트 초기화
+`onCreateView()` : 레이아웃 inflater로 자신의 뷰를 만듦쿸
+`onhActivityCreated()` : onCreate메소드가 완료되면 호출
+
+---
+
+`@Controller` ==> jsp와 연결한다. => redirect, forward =>return타입 string void
+`@RestController` => data를 받아온다 동적 =>return타입 string void(void는 굳이 안써도 된다.)
+==> spring이라 쓰고 json,xml이라 읽는다. (한글처리 확인)
+ `var xhrObject = null;` //전역변수 선언 //`XMLHttpRequest`를담는 변수(jQuery가 담겨 있으면 생략가능하다.)
+
+# 21/06/28
+
+안드 보충
+
+안드로이드를 만들려면 확장자가 apk여야 한다.
+주요 구성은 `AndroidManifest`이다. 클라우드 같은 경우에는 -> `google key`(키값을 맞추려면 안드로이드 http key를 채번해야 한다. 그걸 안드로이드 쪽에서는 토큰으로 처리한다.)
+그 다음은 internet에 대한 옵션 그 다음은``` Activity```` 등록, `service(Firebase)`등록 결국 패턴 자체가 `Activity + Service + Activity`을 쓰게 된다.
+푸쉬알림(다 서비스 등록을 해야한다(manifest에다가))
+
+Activity쪽에서는 상속받는데 기본적으로 `Activity`같은 경우는 `Activity`에 대한 `LifeCycle`에 대한
+이해가 필요하다. 가장 먼저 필요한건 `onCreate()`로 화면을 내보내주는데 그 화면을 출력해주는게
+`setContentView()`이다 우리가 자바에서 아빠클래스를 호출하듯이 상위 라이프사이클 메소드를 호출해서
+초기화 시킨다.
+
+`Activity`가 기억될때 Bundel이 상태값을 관리한다.
+`Activity`와 `Activity`사이 혹은 `Fragment(java로 따지면 JPanel)`와 `Activity`
+
+안드로이드에서 사용자가 Back버튼을 터치하면 현재 액티비티가 종료되고 이전 액티비티로 되돌아간다.
+책331 참고해서 마저써라
+
+intent를 인스턴스화할떄 값은 putExtra() => 파라미터는 map과 같은 형식이다.
+실제로 다른 액티비티를 호출할떈 `StartActivity(int)Intent`
+
+getIntent()를통해 앞에있는 intent를 얻을 수 있고 `Activity`와 `Activity` 책 333페이지 참고해서 마저써라
+
+바깥쪽이 `Activity` 안쪽이 `Fragment`이다.
+그러면 이 `Activity` + Fragment는 서로 왔다갔다가 자유로워야 한다. `Activity`를 접근하려면
+getApplicationContext()를 통해 Fragment를 통해 `Activity`로 접근할 수 있다.
+Toast에서 부모창 접근도 이런 방식으로 가능하다.
+`Activity_main.xml`에 Fragment에 태그를 박으면 `<fragment>` `Activity`와 fargment가 한몸이 되는거다!
+
+하나는 `Activity`자신이 fragment가 되게 하는것 => 네비게이션이 따라다녀서 편하긴하지만 근데 `Activity`에서
+`Activity`로 가면 날라가는게 불편하다. 이런걸 재사용하기 위핸
+Toolbar.xml을 만들고 jsp include하듯이 include하면 된다 => 귀찮은 방법이라 상황에 맞게 하면 된다.
+
+`Activity`에서 `Activity` 갈때는 intent로 가고 `Activity`안에서 화면을 바꾸고 싶을때 바꾸면 페이지가 바뀐다 그럴떈 fragment를 쓰는데 두가지 방법이 있다. 하나는 그 자신이 fragment가 되는것(fragment 태그를 박는다. include안하고도 바텀 네비게이션바를 쓸수있다.)
+
+`<frameLayout>`안에 id( 이친구를 감싸고 있는`Activity`)를 넣는다.
+몇가지 fragment로 화면을 바꿔서 처리할 수 있다.
+
+---
+
+책 314페이지
+
+프래그먼트는 액티비티안에 위치할 수 있는 사용자 인터페이스 하나의 조각이라 할 수 있다.
+서브 액티비티로 생각해도 좋다 단 프래그먼트는 안드로이드매니페스트(퍼미션, 액티비티, 서비스, 테마)에 못넣는다.
+프래그먼트는 태블릿과 같은 넓은 화면을 가지는 모바일 장치를 위한 메커니즘이다.
+
+액티비티와 프래그먼트 책 316페이지
+
+`<framelayout>`에 id를 박아서 메인 액티비티를 꽂아 넣는다. ==> 이거 메모한 사람한테 물어보기
+
+`Activity`에서 `Activity` 값을 넘길떈 `intent`
+`intent`에서 `Fragment`로 넘기는거
+````Activity`에서 `Fragment`로넘기는거 반대로도
+
+책 317 프래그먼트의 특징
+ListFragment는 Dataset과 같아서 xml이 필요없다.
+--
+책318 페이지 코드
+`Activity`안에 프레그먼트가 있다. 타입이 view인데 inflater.inflate(R.layout.fragment1 container, false);
+Listfragment=> DataSet
+
+프래그먼트 안에서는 반드시 view.findbyID를 해야한다\*\*
+
+책 95 페이지
+책 113 페이지
+책 115페이지
+책 109페이지
+
+themes.xml
+`<style name="Theme.5Dogs69" parent="Theme.MaterialComponents.DayNight.NoActionBar" >` 이걸쓰면 액션바가 사라진다.
+
+책 196페이지
+책 190, 193 페이지
+
+화면을 만들려면 액티비티에서 액티비티 호출, 액티비티안에 프래그먼트를 넣는 방법 2가지를 알아야하고
+,, 한 액티비티에서 프래그먼트3개박아서 돌아가는거연습(fragment 트랜잭션)
+
+메뉴바 만들면 좋을거 같고
+
+이미지넣을때 배경없는 이미지넣기
+
+---
+
+jsp 책 205
+
+웹서버는 쿠키를 이용해서 웹 브라우저에 정보를 전송할 수 있다. 웹 서버로부터 쿠킬르 전달받은 웹 브라우저는
+이후 웹서버에 요청을 보낼때 쿠키를 함께 전송한다. 이를 사용하면 웹서버와 웹 브라우저는 필요한 값을 공유하고
+상태를 유지할 수 있다.
+
+브라우저마다 세션아이디가 부여된다.
+세션아이디는 쿠키에 저장된다.
+
+쿠키는 클라이언트측에 저장된다. - text
+
+쿠키는 생성한 후 반드시 내려야한다.
+
+`response.addCookie(쿠키에대한 주소번지)`
+`Cookie c1 = new Cookie("notebook","gram");`
+`c1.setMaxAge(30);`
+`c1.setPath("/");` 세션처럼 선언만 하면 되는게 아니라 Path도 신경 써야함
+`response.addCookie(c1);`
+쿠키를 사용할땐 임시저장할 것들(보안에 중요하지 않은 것들)
+장바구니, 비밀번호 임시저장, 배너 열고 닫는거..이럴떈 쿠키를 쓴다.(노출되도 상관없는 것들)
+\*\* 부트 스트랩은 jquery에서 사용하는 쿠키(별도로 제공한다)를 사용하는게 좋다 -> 강사님의견
+
+쿠키는 삭제할 때도 반드시 인스턴스화를 해야함
+`Cookie c1 = new Cookie("notebook","");`
+`c1.setMaxAge(0);`
+`response.addCookie(c1);`
+
+쿠키를 생성하면, 그 이후부터는 해당 쿠키를 사용할 수 있다. 웹 브라우저는 요청 헤더에 쿠키를 저장해서 보내며,
+JSP는 다음 코드를 사용해서 쿠키 값을 읽어올 수 있다.
+`Cookie[] cookies = request.getCookies();`
+`for(int i =0; i<cookies.length;i++){`
+`out.print(cookies[i].getName() +","+cookies[i].getValue());`
+`}`
+
+세션에선..
+`session.setAttribute("notebook","gram");`
+`session.getAttribute("notebook");`
+세션 타임 - 30분 (톰캣서버 기준이다.)
+
+삭제할땐...
+`session.invalidate();`//전체삭제
+`session.removeAttribute("notebook");` //부분 삭제
+
+# 21/06/27
+
+일요일 트러블 슈팅 => 이클립스 렉은 쓸모없는 프로젝트들을 삭제하니 가벼워진 느낌이다.
+
+https://user-images.githubusercontent.com/78460496/123655889-60607800-d86a-11eb-8efb-2f2eec827815.JPG
+
+https://user-images.githubusercontent.com/78460496/123655900-622a3b80-d86a-11eb-8c92-deb87dfa7387.JPG
+
+다음 에러는 어째서인지 WEB-INF밑에 있는 mybatis-config.xml이 지워져서 없는 상태로 서버를 돌리니 발생한 에러들이다.
+에러 콘솔을 세심히 관찰해야 할 필요성을 느꼈다. mybatis-config.xml을 강사님 github소스로 받아서 해결하였다.
+
 # 21/06/26
-
-
-
 
 ajax란?
 Asychronous JavaScript and XML의 약자
@@ -22,12 +204,8 @@ type : 서버로 전송하는 데이터의 타입(POST, GET)
 url : 데이터를 전송할 URL
 success : ajax 통신에 성공했을 때 호출할 이벤트 핸들러 위치
 
+---
 
-
-
-
-
---------------------
 # 21/06/25
 
 프로젝트 기능
