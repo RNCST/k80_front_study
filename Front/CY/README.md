@@ -36,8 +36,15 @@
 
 `onAttach()` : 프래그먼트가 액티비티에 연결되었을 떄
 `onCreate()` : 프래그먼트 초기화
-`onCreateView()` : 레이아웃 inflater로 자신의 뷰를 만듦
+`onCreateView()` : 레이아웃 inflater로 자신의 뷰를 만듦쿸
 `onhActivityCreated()` : onCreate메소드가 완료되면 호출
+
+---
+
+`@Controller` ==> jsp와 연결한다. => redirect, forward =>return타입 string void
+`@RestController` => data를 받아온다 동적 =>return타입 string void(void는 굳이 안써도 된다.)
+==> spring이라 쓰고 json,xml이라 읽는다. (한글처리 확인)
+ `var xhrObject = null;` //전역변수 선언 //`XMLHttpRequest`를담는 변수(jQuery가 담겨 있으면 생략가능하다.)
 
 # 21/06/28
 
