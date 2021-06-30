@@ -2,6 +2,16 @@
 
 # 21/06/29
 
+트러블 슈팅
+
+https://user-images.githubusercontent.com/78460496/123884761-f4276680-d986-11eb-988d-d2289445cc05.JPG
+
+(1) 컬럼에 맞는 값을 url로 보내서 테스트를 했어야 했지만 컬럼을 잘못넣어서 에러가 생겼다.
+(2) mybatis.xml에서 프로시저 이름 오타를 고쳤다.
+(3)  mybatis.xml에서 위쪽 선언부에 
+`<resultMap type="java.util.Map" id="testMap" />`라고 선언했지만  id값은 다른곳이랑 겹치면 안된다.
+`<resultMap type="java.util.Map" id="scheduleMap" />` 로 수정하여 이 위 3가지 오류를 고친후 컨트롤러 다오 로직을 통해 온전히 값이 전달되었다.
+
 안드로이드
 
 툴바를 추가하는 방법
