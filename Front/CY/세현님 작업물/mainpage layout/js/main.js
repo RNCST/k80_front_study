@@ -1,33 +1,25 @@
-(function($) {
-
-	"use strict";
-
-	var fullHeight = function() {
-
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
-
-	};
-	fullHeight();
-
-	$('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
-  });
-
-})(jQuery);
-const { app, BrowserWindow, Menu } = require("electron");
-const menuTemplate = require("./menu/menuTemplate");
-global.win = null;
-
-function createWindow() {
-  win = new BrowserWindow({ width: 800, height: 600 });
-  /* load local .html file*/
-  win.loadURL(`file://${__dirname}/index.html`);
+function onSidebarClick () {
+  console.log('sidebarCollapse');
+    $('#sidebar').toggleClass('active');
 }
 
-const menu = Menu.buildFromTemplate(menuTemplate);
+(function($) {
 
-Menu.setApplicationMenu(menu);
-app.on("ready", createWindow);
+"use strict";
+
+var fullHeight = function() {
+
+  $('.js-fullheight').css('height', $(window).height());
+  $(window).resize(function(){
+    console.log('js-fullheight');
+    $('.js-fullheight').css('height', $(window).height());
+  });
+
+};
+fullHeight();
+
+$('#sidebarCollapse').on('click', onSidebarClick);
+
+})(jQuery);
+
+/*export default onSidebarClick; 연동 2억 5천의 코멘트 */

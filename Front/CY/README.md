@@ -1,6 +1,43 @@
 # Study
+#  21/07/07
+
+
+# 21/07/06
+
+
+https://user-images.githubusercontent.com/78460496/124527023-68f31880-de3f-11eb-84e8-457e4378fd5d.JPG
+
+## ViewPager와 TabLayout을 같이 써야 한다.
+
+만드는거 예정 표준이 아님
+
+페이지 구성에서 ``MainActivity`는 한장
+프로젝트이름은 FoodApp801
+
+- `HomeFragment` fragment_home_xml로 처리
+- `PizzzaFragment` 나머지 두개는 ListFragment
+- `StroeFragment`
+
+bulid gradle 34번줄 material를 요즘은 무조건 박아둔다.
+
+toolbar안쓸때는 꼭 thems.xm에서 noActionBar
 
 # 21/07/05
+
+트러블 슈팅
+
+https://user-images.githubusercontent.com/78460496/124442625-e5421900-ddb7-11eb-9ad6-2a082b796463.JPG
+
+mybatis.xml에서 jdbctype을 number로 지정했으나 mybatis에서는 INTEGER로 설정해야 한다.
+https://user-images.githubusercontent.com/78460496/124445836-dc067b80-ddba-11eb-9d7b-29610d06a0ad.JPG
+
+트러블 슈팅2
+
+https://user-images.githubusercontent.com/78460496/124445922-f04a7880-ddba-11eb-9347-097054e8a22e.JPG
+NAMESPACE에서 오타를 내서 고쳐서 해결하였다.
+또 한 URL에서 값과 값사이에 공백이 있어 에러가 났고 공백을 발견해 공백없이 값을 주어 해결하엿다.
+
+---
 
 itemClicked(id)
 
